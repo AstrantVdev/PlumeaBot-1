@@ -7,8 +7,7 @@
   },
 
   "scripts":{
-    "deploy-commands" : "node deploy-commands.js",
-    "start":"node index.js"
+    "start":"node deploy-commands & node index.js"
   }
 
 }
