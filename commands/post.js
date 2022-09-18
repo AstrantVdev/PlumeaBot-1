@@ -3,10 +3,6 @@ const { EmbedBuilder } = require('discord.js');
 const path = require('path');
 const pdf = require('pdf-parse');
 
-const axios = require('axios')
-const FormData = require('form-data')
-const fs = require('fs')
-
 module.exports = {
 	data: new SlashCommandBuilder()
 	.setName('post')
