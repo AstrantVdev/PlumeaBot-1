@@ -3,10 +3,10 @@ const path = require('path')
 const fs = require('fs')
 const { execute } = require('./events/ready')
 const interractionCreate = require('./events/interractionCreate')
-global.CHANNELSPATH = path.join(__dirname, 'CHANNELS.json')
-global.MEMBERSPATH = path.join(__dirname, 'MEMBERS.json')
-global.ROLESPATH = path.join(__dirname, 'ROLES.json')
-global.TEXTSPATH = path.join(__dirname, 'TEXTS.json')
+global.CHANNELSPATH = "CHANNELS.json"
+global.MEMBERSPATH = "MEMBERS.json"
+global.ROLESPATH = "ROLES.json"
+global.TEXTSPATH = "TEXTS.json"
 
 global.client = new Client({
     intents: [
