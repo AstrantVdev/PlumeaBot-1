@@ -21,9 +21,10 @@ module.exports = {
         const id = json.intToABC(member.user.id)
         const membersfile = editJsonFile(MEMBERSPATH);
 		
-	console.log(members)
-
         members = membersfile.get("list")
+		
+		        console.log(members)
+
         if(!members.includes(id)){
                 const today = new Date()
                 const date = ("0" + today.getDate()).slice(-2);
