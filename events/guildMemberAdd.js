@@ -23,7 +23,7 @@ module.exports = {
 		
         members = membersfile.get("list")
 		
-		        console.log(members)
+        console.log(membersfile + "/" + editJsonFile)
 
         if(!members.includes(id)){
                 const today = new Date()
