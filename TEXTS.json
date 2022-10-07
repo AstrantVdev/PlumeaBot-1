@@ -1,0 +1,23 @@
+{
+    "genres":{
+        "list":["nouvelle","fantastique","science-fiction","fantasy","policier","biographie","conte","poesie","theatre"],
+        "nouvelle":["ASRA05"],
+        "fantastique":["ASRA05"], 
+        "science-fiction":[], 
+        "fantasy":[],
+        "policier":[],
+        "biographie":[],
+        "conte":[],
+        "poesie":[],
+        "theatre":[]
+    },
+    "texts":{
+        "list":["ASRA05"],
+        "ASRA05":{
+            "link":"link",
+            "genres":["nouvelle", "fantastique"],
+            "warns":["18", "gore", "psy"]
+        }
+    }
+
+}

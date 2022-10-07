@@ -79,7 +79,7 @@ module.exports = {
 					message += "#Le titre de l'œuvre est absent.\n";
 					break;
 				case '3':
-					message += "#Le nombre de mots est absent.\n";
+					message += "#Tu as posté trop de mots en une semaine, pas plus de 20k.\n";
 					break;
 				case '4':
 					message += "#Le synopsis est absent.\n";
