@@ -4,9 +4,8 @@ const fs = require('fs')
 const { execute } = require('./events/ready')
 const interractionCreate = require('./events/interractionCreate')
 global.CHANNELSPATH = "CHANNELS.json"
-global.MEMBERSPATH = "MEMBERS.json"
 global.ROLESPATH = "ROLES.json"
-global.TEXTSPATH = "TEXTS.json"
+const {token} = require('./config.json');
 
 global.client = new Client({
     intents: [
@@ -58,4 +57,4 @@ for (const file of eventFiles) {
 	}
 }
 
-client.login(process.env.TOKEN);
+client.login(token);

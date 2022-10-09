@@ -6,7 +6,8 @@
     "edit-json-file": "^1.7.0",
     "fs": "^0.0.1-security",
     "path": "^0.12.7",
-    "pdf-parse": "^1.1.1"
+    "pdf-parse": "^1.1.1",
+    "request": "^2.88.2"
   },
   "scripts": {
     "start": "node deploy-commands & node index.js"
