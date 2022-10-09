@@ -13,13 +13,13 @@ module.exports = {
 		const json = require("../utils/json")
 		const editJsonFile = require("edit-json-file")
 
-		let memberfile = editJsonFile(MEMBERSPATH);
+		let memberfile = editJsonFile(CHANNELSPATH);
 		const user = interaction.options.getUser('user')
 		const name = user.username
 		const id = json.intToABC(user.id)
-		const plumes = memberfile.get(id+".plumes")
-		const date = memberfile.get(id+".date")
-		const scriptucoins = memberfile.get(id+".scriptucoins")
+		const plumes = memberfile.get("members."+id+".plumes")
+		const date = memberfile.get("members."+id+".date")
+		const scriptucoins = memberfile.get("members."+id+".scriptucoins")
 
 		message = "**Profil de : <@"+user.id+">**\n\n"
 		message += "Plumes : *"+plumes+"*\n"
