@@ -18,8 +18,8 @@ module.exports = {
     .addStringOption(option => option
         .setName('dt')
         .setDescription("8-11 lettres rapportant au texte")
-        .setMinLength(8)
-        .setMaxLength(11)    
+        .setMinLength(12)
+        .setMaxLength(15)    
         .setRequired(true)),
 
         async execute(interaction) {
