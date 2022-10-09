@@ -2,8 +2,9 @@ module.exports = {
 
     roles(member, plumes, interaction) {
         lower = 0
-    
-        const json = JSON.stringify(require(ROLESPATH), null, 2)
+        const path = require("path")
+
+        const json = JSON.stringify(ROLESPATH, null, 2)
         const roles = new Map(Object.entries(JSON.parse(json)));
 
         roles.forEach((points, roleid)=>{
@@ -25,13 +26,6 @@ module.exports = {
         })
         if(roleToAdd != 0) member.roles.add(roleToAdd)
 
-    },
-
-    add(memberId, p) {
-    },
-
-    get(memberId){
-        return plumes
     }
 
 }
