@@ -6,10 +6,6 @@ module.exports = {
 	async execute(member) {
         const editJsonFile = require("edit-json-file")
 
-        const channelfile = editJsonFile(CHANNELSPATH);
-        const welcome = channelfile.get("welcome")
-        const presentation = channelfile.get("presentation")
-
         const welcomeMessage = new EmbedBuilder()
         .setColor(0x2C2F33)
         .setDescription(`**Bienvenue sur Scriptura ${member.user}.**`)
@@ -40,6 +36,10 @@ module.exports = {
                 await membersfile.save()
 
         }
+		
+	const channelfile = editJsonFile(CHANNELSPATH);
+        const welcome = channelfile.get("welcome")
+        const presentation = channelfile.get("presentation")
 
         await client.channels.fetch(welcome)
         .then(channel => channel.send({ embeds: [welcomeMessage]}));
