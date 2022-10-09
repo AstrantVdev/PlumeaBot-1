@@ -7,7 +7,7 @@ module.exports = {
         const editJsonFile = require("edit-json-file")
 
         const channelfile = editJsonFile(CHANNELSPATH);
-        const welcome = channelfile.get("welcome")
+        const welcome = channelfile.get("cya")
 
         const welcomeMessage = new EmbedBuilder()
         .setColor(0x2C2F33)
