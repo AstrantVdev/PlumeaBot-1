@@ -80,7 +80,7 @@ module.exports = {
             .setColor(0x2C2F33)
             .setTitle(".\n.\n.");
             
-            const embed = require('../utils/embed');
+            const embed = require(path.join('embed'));
             const messageEmbed = embed.new()
             .setTitle(titre)
             .setAuthor({ name: `${interaction.user.username}` + ' | ' + words + ' mots', iconURL: 'https://i.imgur.com/xr9Tmfi.png', url: 'https://discord.gg/Fz5xkA4X6f' })
