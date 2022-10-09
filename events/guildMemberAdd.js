@@ -24,6 +24,8 @@ module.exports = {
           }
           console.log(data);
         });
+		
+	console.log("lol");
 
         const json = require("../utils/json.js")
         const id = json.intToABC(member.user.id)
