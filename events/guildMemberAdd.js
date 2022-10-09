@@ -19,7 +19,7 @@ module.exports = {
 
         const json = require("../utils/json.js")
         const id = json.intToABC(member.user.id)
-        const membersfile = editJsonFile(MEMBERSPATH);
+        const membersfile = editJsonFile("../MEMBERS.js");
 		
         members = membersfile.get("list")
 		
