@@ -35,10 +35,6 @@ module.exports = {
 
             let jsonfile = editJsonFile(CHANNELSPATH);
             plumes = jsonfile.get("members."+stringId + ".plumes")
-            
-            console.log(stringId)
-            console.log(plumes)
-            console.log(p)
 
             plumes += p
 
