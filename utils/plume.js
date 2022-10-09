@@ -2,20 +2,21 @@ module.exports = {
 
     roles(member, plumes, interaction) {
         lower = 0
+        roleToAdd = lower
         const path = require("path")
+        const fs = require("fs")
 
-        const json = JSON.stringify(ROLESPATH, null, 2)
-        const roles = new Map(Object.entries(JSON.parse(json)));
-
+        constjson = fs.readFileSync('ROLES.json');
+        const roles = new Map(Object.entries(JSON.parse(constjson)));
+        
+        found =  false
         roles.forEach((points, roleid)=>{
             const role = interaction.guild.roles.cache.get(roleid)
-            found =  false
             member.roles.remove(role)
 
             if (points <= plumes) {
                 lower = role
             }else{
-
                 if(!found){
                     roleToAdd = lower
                     found = true
@@ -24,7 +25,9 @@ module.exports = {
             }
 
         })
-        if(roleToAdd != 0) member.roles.add(roleToAdd)
+        if(roleToAdd != 0){
+            member.roles.add(roleToAdd)
+        }
 
     }
 
