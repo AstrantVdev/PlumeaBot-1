@@ -28,7 +28,8 @@ module.exports = {
 
             let jsonfile = editJsonFile(MEMBERSPATH);
             plumes = jsonfile.get(stringId + ".plumes")
-            
+           
+	    console.log("members."+stringId + ".plumes")
             console.log(stringId)
             console.log(plumes)
             console.log(p)
