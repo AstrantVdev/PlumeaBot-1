@@ -18,26 +18,19 @@ module.exports = {
 
         async execute(interaction) {
             const plume = require("../utils/plume.js")
+            const json = require("../utils/json.js")
             const editJsonFile = require("edit-json-file")
-            const fs = require('fs')
 
             const member = interaction.options.getMember('user')
             const memberId = member.id
+            const stringId = json.intToABC(memberId)
             const p = interaction.options.getInteger('plumes')    
-            const fileName = DATAPATH;
-            const file = require(fileName);
 
             let jsonfile = editJsonFile(MEMBERSPATH);
-            plumes = jsonfile.get(memberId + ".plumes")
-            date = jsonfile.get(memberId + ".date")
-
+            plumes = jsonfile.get(stringId + ".plumes")
             plumes += p
-    
-            file[memberId] = {plumes: plumes, date: date};
-    
-            fs.writeFile(fileName, JSON.stringify(file, null, 2), function writeJSON(err) {
-              if (err) return console.log(err);
-            })
+
+            jsonfile.set(stringId + ".plumes", plumes)
             
             await plume.roles(member, plumes, interaction)
 
