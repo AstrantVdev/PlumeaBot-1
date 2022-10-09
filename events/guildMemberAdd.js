@@ -24,7 +24,7 @@ module.exports = {
         members = membersfile.get("members.list")
         if(!members.includes(id)){
                 const account = require("../utils/account")
-                account.create(user)
+                account.create(member.user)
         }
 
         await client.channels.fetch(welcome)
