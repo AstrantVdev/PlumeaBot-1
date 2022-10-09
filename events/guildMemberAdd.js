@@ -15,7 +15,15 @@ module.exports = {
         .setDescription(`**Bienvenue sur Scriptura ${member.user}.**`)
         .setAuthor({ name: 'Youpiii !',iconURL: 'https://i.imgur.com/xr9Tmfi.png', url: 'https://discord.gg/Fz5xkA4X6f' })
         .setThumbnail(member.user.displayAvatarURL())
-        .setTimestamp()
+        .setTimestamp() 
+	
+	fs = require('fs')
+	fs.readFile(MEMBERSPATH, 'utf8', function (err,data) {
+          if (err) {
+            return console.log(err);
+          }
+          console.log(data);
+        });
 
         const json = require("../utils/json.js")
         const id = json.intToABC(member.user.id)
