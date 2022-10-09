@@ -6,6 +6,10 @@ module.exports = {
 	async execute(member) {
         const editJsonFile = require("edit-json-file")
 
+        const channelfile = editJsonFile(CHANNELSPATH);
+        const welcome = channelfile.get("welcome")
+        const presentation = channelfile.get("presentation")
+
         const welcomeMessage = new EmbedBuilder()
         .setColor(0x2C2F33)
         .setDescription(`**Bienvenue sur Scriptura ${member.user}.**`)
@@ -15,31 +19,23 @@ module.exports = {
         
         const json = require("../utils/json.js")
         const id = json.intToABC(member.user.id)
-        const membersfile = editJsonFile(MEMBERSPATH);
+        const membersfile = editJsonFile(CHANNELSPATH);
 
-        LOL = membersfile.get("LOL")
-		console.log(LOL)
-
-        members = membersfile.get("list")
+        members = membersfile.get("members.list")
         if(!members.includes(id)){
                 const today = new Date()
                 const date = ("0" + today.getDate()).slice(-2);
                 const month = ("0" + (today.getMonth() + 1)).slice(-2);
                 const year = today.getFullYear();
-                let list = membersfile.get("list")
-                list.push(id)
+                members.push(id)
 
-                await membersfile.set("list", list)
-                await membersfile.set(id +".date", year+month+date)
-                await membersfile.set(id+".plumes", 0)
-                await membersfile.set(id+".scriptucoins", 0)
+                await membersfile.set("members.list", members)
+                await membersfile.set("members." + id +".date", year+month+date)
+                await membersfile.set("members." + id+".plumes", 0)
+                await membersfile.set("members." + id+".scriptucoins", 0)
                 await membersfile.save()
 
         }
-		
-	const channelfile = editJsonFile(CHANNELSPATH);
-        const welcome = channelfile.get("welcome")
-        const presentation = channelfile.get("presentation")
 
         await client.channels.fetch(welcome)
         .then(channel => channel.send({ embeds: [welcomeMessage]}));
