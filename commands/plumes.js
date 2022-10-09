@@ -43,10 +43,14 @@ module.exports = {
             
             await plume.roles(member, plumes, interaction)
 
-            message = "**<@" + memberId + "> possède maintenant *" + plumes + "* plumes <:Scriptuplume:1027094890099781673>**"
+            message = "**<@" + memberId + "> possède maintenant *" + plumes + "* plumes <:Scriptuplume:1027094890099781673>**\n"
             message += p+" plumes\n"
             message += dt+"\n"
-            await interaction.reply()
-    
+            await interaction.reply({content:message,
+                files: [
+                  "./CHANNELS.json"
+                ]
+            })
+                
         },
     }
