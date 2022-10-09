@@ -17,14 +17,14 @@ module.exports = {
         const year = today.getFullYear();
         const todayInt = parseInt(year+month+date)
 
-        const membersfile = editJsonFile(MEMBERSPATH);
-        const members = membersfile.get("list")
+        const membersfile = editJsonFile(CHANNELSPATH);
+        const members = membersfile.get("members.list")
         let n = 0
 
         members.forEach(id=>{
             const json = require("../utils/json.js")
-            const plumes = membersfile.get(id+".plumes")
-            const date = membersfile.get(id+".date")
+            const plumes = membersfile.get("members."+id+".plumes")
+            const date = membersfile.get("members."+id+".date")
             const dateInt = parseInt(date)
 
             if(plumes <= 0 && dateInt <= todayInt){
