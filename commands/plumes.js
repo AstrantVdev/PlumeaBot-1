@@ -30,7 +30,9 @@ module.exports = {
             plumes = jsonfile.get(stringId + ".plumes")
             plumes += p
 
-            jsonfile.set(stringId + ".plumes", plumes)
+
+            await jsonfile.set(stringId + ".plumes", plumes)
+            await jsonfile.save()
             
             await plume.roles(member, plumes, interaction)
 
