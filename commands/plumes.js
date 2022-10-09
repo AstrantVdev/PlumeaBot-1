@@ -14,6 +14,12 @@ module.exports = {
         .setMaxValue(99)
         .setName('plumes')
 		.setDescription("Nombre de Points à rajouter/enlever")
+        .setRequired(true))    
+    .addStringOption(option => option
+        .setName('dt')
+        .setDescription("8-11 lettres rapportant au texte")
+        .setMinLength(8)
+        .setMaxLength(11)    
         .setRequired(true)),
 
         async execute(interaction) {
@@ -22,6 +28,7 @@ module.exports = {
             const editJsonFile = require("edit-json-file")
 
             const member = interaction.options.getMember('user')
+            const dt = interaction.options.getString('dt')
             const memberId = member.id
             const stringId = json.intToABC(memberId)
             const p = interaction.options.getInteger('plumes')    
@@ -40,7 +47,10 @@ module.exports = {
             
             await plume.roles(member, plumes, interaction)
 
-            await interaction.reply("**<@" + memberId + "> possède maintenant *" + plumes + "* plumes <:Scriptuplume:1027094890099781673>**")
+            message = "**<@" + memberId + "> possède maintenant *" + plumes + "* plumes <:Scriptuplume:1027094890099781673>**"
+            message += p+" plumes\n"
+            message += dt+"\n"
+            await interaction.reply()
     
         },
     }
