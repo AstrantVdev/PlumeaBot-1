@@ -28,8 +28,12 @@ module.exports = {
 
             let jsonfile = editJsonFile(MEMBERSPATH);
             plumes = jsonfile.get(stringId + ".plumes")
-            plumes += p
+            
+            console.log(stringId)
+            console.log(plumes)
+            console.log(p)
 
+            plumes += p
 
             await jsonfile.set(stringId + ".plumes", plumes)
             await jsonfile.save()
