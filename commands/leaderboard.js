@@ -10,13 +10,13 @@ module.exports = {
 		const json = require("../utils/json")
 		const editJsonFile = require("edit-json-file")
 
-		let memberfile = editJsonFile(MEMBERSPATH);
-		const members = memberfile.get("list")
+		let memberfile = editJsonFile(CHANNELSPATH);
+		const members = memberfile.get("members.list")
         let winnersPlumes = []
         let winnersId = []
 
         members.forEach(m=>{
-            plumes = memberfile.get(m+".plumes")
+            plumes = memberfile.get("members."+m+".plumes")
             higher = true
             const l = winnersPlumes.length
             for (let i = 0; i < l; i++) {
