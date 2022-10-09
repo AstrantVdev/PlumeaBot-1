@@ -15,15 +15,14 @@ module.exports = {
         .setDescription(`**Bienvenue sur Scriptura ${member.user}.**`)
         .setAuthor({ name: 'Youpiii !',iconURL: 'https://i.imgur.com/xr9Tmfi.png', url: 'https://discord.gg/Fz5xkA4X6f' })
         .setThumbnail(member.user.displayAvatarURL())
-        .setTimestamp() 
-
+        .setTimestamp()
+        
         const json = require("../utils/json.js")
         const id = json.intToABC(member.user.id)
-        const membersfile = editJsonFile("../MEMBERS.js");
-		
+        const membersfile = editJsonFile(MEMBERSPATH);
+
         members = membersfile.get("list")
-		
-        console.log(membersfile.toObject)
+        console.log(id)
         if(!members.includes(id)){
                 const today = new Date()
                 const date = ("0" + today.getDate()).slice(-2);
