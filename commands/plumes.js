@@ -26,22 +26,21 @@ module.exports = {
             const stringId = json.intToABC(memberId)
             const p = interaction.options.getInteger('plumes')    
 
-            let jsonfile = editJsonFile(MEMBERSPATH);
-            plumes = jsonfile.get(stringId + ".plumes")
-           
-	    console.log("members."+stringId + ".plumes")
+            let jsonfile = editJsonFile(CHANNELSPATH);
+            plumes = jsonfile.get("members."+stringId + ".plumes")
+            
             console.log(stringId)
             console.log(plumes)
             console.log(p)
 
             plumes += p
 
-            await jsonfile.set(stringId + ".plumes", plumes)
+            await jsonfile.set("members." + stringId + ".plumes", plumes)
             await jsonfile.save()
             
             await plume.roles(member, plumes, interaction)
 
-            await interaction.reply("**<@" + memberId + "> possède maintenant *" + plumes + "* plumes <:plume:1024014166022955078>**")
+            await interaction.reply("**<@" + memberId + "> possède maintenant *" + plumes + "* plumes <:Scriptuplume:1027094890099781673>**")
     
         },
     }
