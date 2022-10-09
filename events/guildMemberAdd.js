@@ -23,18 +23,8 @@ module.exports = {
 
         members = membersfile.get("members.list")
         if(!members.includes(id)){
-                const today = new Date()
-                const date = ("0" + today.getDate()).slice(-2);
-                const month = ("0" + (today.getMonth() + 1)).slice(-2);
-                const year = today.getFullYear();
-                members.push(id)
-
-                await membersfile.set("members.list", members)
-                await membersfile.set("members." + id +".date", year+month+date)
-                await membersfile.set("members." + id+".plumes", 0)
-                await membersfile.set("members." + id+".scriptucoins", 0)
-                await membersfile.save()
-
+                const account = require("../utils/account")
+                account.create(user)
         }
 
         await client.channels.fetch(welcome)
