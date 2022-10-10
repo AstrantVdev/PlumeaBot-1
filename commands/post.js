@@ -83,7 +83,7 @@ module.exports = {
             const embed = require("../utils/embed");
             const messageEmbed = embed.new()
             .setTitle(titre)
-            .setAuthor({ name: `${interaction.user.username}` + ' | ' + words + ' mots', iconURL: 'https://i.imgur.com/TYeapMy.png', url: 'https://discord.gg/cE9rz3cagx' })
+            .setAuthor({ name: `${interaction.user.username}` + ' | ' + words + ' mots', iconURL: 'https://i.imgur.com/TYeapMy.png', url: 'https://www.youtube.com/watch?v=xvFZjo5PgG0' })
             .setDescription(description)
     
             if(words <= 20000){
