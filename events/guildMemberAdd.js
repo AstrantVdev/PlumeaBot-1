@@ -3,6 +3,7 @@ module.exports = {
 	once: false,
 	async execute(member) {
         const editJsonFile = require("edit-json-file")
+        const embed = require("../utils/embed")
 
         const channelfile = editJsonFile(CHANNELSPATH);
         const welcome = channelfile.get("welcome")
