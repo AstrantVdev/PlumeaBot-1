@@ -1,5 +1,3 @@
-const { EmbedBuilder } = require('discord.js');
-
 module.exports = {
 	name: 'guildMemberAdd',
 	once: false,
@@ -10,12 +8,10 @@ module.exports = {
         const welcome = channelfile.get("welcome")
         const presentation = channelfile.get("presentation")
 
-        const welcomeMessage = new EmbedBuilder()
-        .setColor(0x2C2F33)
+        welcomeMessage = embed.new()
         .setDescription(`**Bienvenue sur Scriptura ${member.user}.**`)
-        .setAuthor({ name: 'Youpiii !',iconURL: 'https://i.imgur.com/xr9Tmfi.png', url: 'https://discord.gg/Fz5xkA4X6f' })
+        .setAuthor({ name: 'Youpiii !',iconURL: 'https://i.imgur.com/TYeapMy.png', url: 'https://discord.gg/cE9rz3cagx' })
         .setThumbnail(member.user.displayAvatarURL())
-        .setTimestamp()
         
         const json = require("../utils/json.js")
         const id = json.intToABC(member.user.id)
