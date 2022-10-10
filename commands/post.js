@@ -1,5 +1,4 @@
 const { SlashCommandBuilder, PermissionFlagsBits } = require('discord.js');
-const { EmbedBuilder } = require('discord.js');
 const path = require('path');
 const pdf = require('pdf-parse');
 
@@ -80,7 +79,7 @@ module.exports = {
             .setColor(0x2C2F33)
             .setTitle(".\n.\n.");
             
-            const embed = require(path.join('embed'));
+            const embed = require("../utiles/embed.js");
             const messageEmbed = embed.new()
             .setTitle(titre)
             .setAuthor({ name: `${interaction.user.username}` + ' | ' + words + ' mots', iconURL: 'https://i.imgur.com/xr9Tmfi.png', url: 'https://discord.gg/Fz5xkA4X6f' })
