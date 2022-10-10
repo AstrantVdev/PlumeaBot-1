@@ -3,14 +3,8 @@ module.exports = {
 	async execute(message) {
 
         if (!message.author.bot){
-
-            if (message.content.includes("CHAD")) {
-                message.reply(`https://tenor.com/view/mujikcboro-seriymujik-gif-24361533`);
-            }
-            if (message.content.includes("rick")) {
-                message.reply(`https://tenor.com/view/rickroll-rick-roll-gif-gif-25399889`);
-            }            
-
+		message.reply("https://tenor.com/view/rimworld-thrumbo-gif-22303388\n"Libérez les paëllas"");
+		
             let roles = message.member.roles.cache.map(r => `${r}`).length;
 
             if (roles == 1){
