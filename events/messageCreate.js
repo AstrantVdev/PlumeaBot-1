@@ -3,7 +3,6 @@ module.exports = {
 	async execute(message) {
 
         if (!message.author.bot){
-		message.reply("https://tenor.com/view/rimworld-thrumbo-gif-22303388\nLibérez les paëllas");
 		
             let roles = message.member.roles.cache.map(r => `${r}`).length;
 
