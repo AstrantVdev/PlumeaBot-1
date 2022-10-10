@@ -29,7 +29,7 @@ module.exports = {
         .setRequired(true))
     .addStringOption(option => option
         .setName('dt_auteur')
-        .setDescription("DT identifiant")
+        .setDescription("4 premières lettres de votre pseudo discord")
         .setMinLength(4)
         .setMaxLength(4)    
         .setRequired(true))
