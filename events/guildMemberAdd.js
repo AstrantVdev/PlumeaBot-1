@@ -10,7 +10,7 @@ module.exports = {
 
         welcomeMessage = embed.new()
         .setDescription(`**Bienvenue sur Scriptura ${member.user}.**`)
-        .setAuthor({ name: 'Youpiii !',iconURL: 'https://i.imgur.com/TYeapMy.png', url: 'https://discord.gg/cE9rz3cagx' })
+        .setAuthor({ name: 'Youpiii !',iconURL: 'https://i.imgur.com/TYeapMy.png', url: 'https://www.youtube.com/watch?v=xvFZjo5PgG0' })
         .setThumbnail(member.user.displayAvatarURL())
         
         const json = require("../utils/json.js")
