@@ -18,7 +18,7 @@ module.exports = {
         const fs = require("fs");
         request.get(url)
             .on('error', console.error)
-            .pipe(fs.createWriteStream('CHANNELS.json'));
+            .pipe(fs.createWriteStream('DATA.json'));
 
 		await interaction.reply({ content: 'Action accomplie avec succès ! :D', ephemeral: true })
 
