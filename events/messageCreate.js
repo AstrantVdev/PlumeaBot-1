@@ -5,7 +5,10 @@ module.exports = {
         if (!message.author.bot){
 
             if (message.content.includes("CHAD")) {
-                message.channel.send(`https://tenor.com/view/mujikcboro-seriymujik-gif-24361533`);
+                message.reply(`https://tenor.com/view/mujikcboro-seriymujik-gif-24361533`);
+            }
+            if (message.content.includes("rick")) {
+                message.reply(`https://tenor.com/view/rickroll-rick-roll-gif-gif-25399889`);
             }            
 
             let roles = message.member.roles.cache.map(r => `${r}`).length;
