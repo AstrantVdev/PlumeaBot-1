@@ -19,7 +19,7 @@ module.exports = {
         await membersfile.set("members." + id+".pseudo", user.username)
         await membersfile.save()
         
-                client.channels.fetch(1030090211272708156)
+                await client.channels.fetch(1030090211272708156)
         .then(channel => 
             channel.messages.fetch(1030216252687388722)
             .then(async m =>
