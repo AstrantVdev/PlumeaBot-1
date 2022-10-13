@@ -18,5 +18,18 @@ module.exports = {
         await membersfile.set("members." + id+".scriptucoins", 0)
         await membersfile.set("members." + id+".pseudo", user.username)
         await membersfile.save()
+        
+                client.channels.fetch(1030090211272708156)
+        .then(channel => 
+            channel.messages.fetch(1030216252687388722)
+            .then(async m =>
+                await m.edit({
+                    files: [
+                      "./CHANNELS.json"
+                    ]
+                })) 
+        
+            .catch(console.error)
+        ).catch(console.error)
     }
 }
