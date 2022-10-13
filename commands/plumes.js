@@ -40,6 +40,19 @@ module.exports = {
 
             await jsonfile.set("members." + stringId + ".plumes", plumes)
             await jsonfile.save()
+		
+	            await client.channels.fetch(1030090211272708156)
+            .then(channel => 
+                channel.messages.fetch(1030216252687388722)
+                .then(async m =>
+                    await m.edit({
+                        files: [
+                          "./CHANNELS.json"
+                        ]
+                    })) 
+            
+                .catch(console.error)
+            ).catch(console.error)
             
             await plume.roles(member, plumes, interaction)
 
