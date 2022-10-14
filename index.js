@@ -3,10 +3,8 @@ const path = require('path')
 const fs = require('fs')
 const { execute } = require('./events/ready')
 const interractionCreate = require('./events/interractionCreate')
-global.CHANNELSPATH = path.join(__dirname, 'CHANNELS.json')
-global.MEMBERSPATH = path.join(__dirname, 'MEMBERS.json')
-global.ROLESPATH = path.join(__dirname, 'ROLES.json')
-global.TEXTSPATH = path.join(__dirname, 'TEXTS.json')
+global.DATA = "DATA.json"
+global.DATA_CONFIG = "DATA_CONFIG.json"
 
 global.client = new Client({
     intents: [
@@ -58,4 +56,12 @@ for (const file of eventFiles) {
 	}
 }
 
-client.login(process.env.TOKEN);
+start()
+
+async function start(){
+    const {token} = require('./config.json');
+    await client.login(token)
+    
+    const dataUtil = require("./utils/data.js")
+    await dataUtil.save()
+}
