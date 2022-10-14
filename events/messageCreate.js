@@ -3,7 +3,8 @@ module.exports = {
 	async execute(message) {
         const editJsonFile = require("edit-json-file")
         const dataConfig = editJsonFile(DATA_CONFIG)
-        const channelId = message.channel.name
+        const channelName = message.channelname
+        const channelId = message.channel.id
         userId = message.author.id
 
         if (!message.author.bot){
@@ -32,7 +33,7 @@ module.exports = {
 
         }else{
 
-            if(!dataConfig.get("channels.nologs").includes(channelId) && message.flags.bitfield != 64){
+            if(!dataConfig.get("channels.nologs").includes(channelName) && message.flags.bitfield != 64){
                 client.channels.fetch(dataConfig.get("channels.logs"))
                 .then(channel => 
                     channel.send({content : message.content, files: message.attachments, embeds: message.embeds})
