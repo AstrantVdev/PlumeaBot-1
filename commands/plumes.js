@@ -38,18 +38,18 @@ module.exports = {
             let jsonfile = editJsonFile(DATA);
             plumes = jsonfile.get("members."+stringId + ".plumes")
 
-            plumes += p
+            plumes
 
-            await jsonfile.set("members." + stringId + ".plumes", plumes)
+            await jsonfile.set("members." + stringId + ".plumes", plumes+p)
             await jsonfile.save()
 
-            await plume.roles(member, plumes, interaction)
+            await plume.roles(member, plumes+p, interaction)
 
             await leaderboard.edit()
 
             await data.upload()
 
-            message = "**<@" + memberId + "> possède maintenant *" + plumes + "* plumes <:Scriptuplume:1027094890099781673>**\n"
+            message = "**<@" + memberId + "> possède maintenant *" + plumes+p + "* plumes <:Scriptuplume:1027094890099781673>**\n"
             message += p+" plumes\n"
             message += dt+"\n"
             await interaction.reply(message)
