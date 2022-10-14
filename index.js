@@ -1,8 +1,6 @@
 const { Client, GatewayIntentBits, Collection, InteractionCollector } = require('discord.js')
 const path = require('path')
 const fs = require('fs')
-const { execute } = require('./events/ready')
-const interractionCreate = require('./events/interractionCreate')
 global.DATA = "DATA.json"
 global.DATA_CONFIG = "DATA_CONFIG.json"
 
@@ -59,8 +57,7 @@ for (const file of eventFiles) {
 start()
 
 async function start(){
-    const {token} = require('./config.json');
-    await client.login(token)
+    await client.login(process.env.TOKEN);
     
     const dataUtil = require("./utils/data.js")
     await dataUtil.save()
