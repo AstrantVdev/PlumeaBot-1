@@ -3,7 +3,7 @@ module.exports = {
 	async execute(message) {
         const editJsonFile = require("edit-json-file")
         const dataConfig = editJsonFile(DATA_CONFIG)
-        const channelName = message.channelname
+        const channelName = message.channel.name
         const channelId = message.channel.id
         userId = message.author.id
 
