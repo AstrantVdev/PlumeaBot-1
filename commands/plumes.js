@@ -17,7 +17,7 @@ module.exports = {
         .setRequired(true))    
     .addStringOption(option => option
         .setName('dt')
-        .setDescription("8-11 lettres rapportant au texte")
+        .setDescription("12-15 lettres rapportant au texte")
         .setMinLength(12)
         .setMaxLength(15)    
         .setRequired(true)),
