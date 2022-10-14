@@ -33,14 +33,12 @@ module.exports = {
 
             if(roleBefore != roleToAdd.id){
                 client.channels.fetch(dataConfig.get("channels.plumes"))
-                .then(channel => channel.send("<@"+member.user.id+"> " + "vient de devenir un " + roleToAdd.name)
+                .then(channel => channel.send("<@"+member.user.id+"> " + "devient un " + roleToAdd.name)
                 ).catch(console.error)
             }
             
         }
 
     },
-
-
 
 }
