@@ -1,17 +1,20 @@
 module.exports = {
 
     roles(member, plumes, interaction) {
-        lower = 0
-        roleToAdd = lower
-        const path = require("path")
-        const fs = require("fs")
+        const editJsonFile = require("edit-json-file")
+        const dataConfig = editJsonFile(DATA_CONFIG)
 
-        constjson = fs.readFileSync('ROLES.json');
-        const roles = new Map(Object.entries(JSON.parse(constjson)));
+        json = dataConfig.get("roles")
+        const roles = new Map(Object.entries(json))
         
         found =  false
+        lower = 0
+        roleToAdd = 0
+        roleBefore = 0
         roles.forEach((points, roleid)=>{
             const role = interaction.guild.roles.cache.get(roleid)
+            if(member.roles.cache.find(r => r.id === roleid)){roleBefore = role}
+
             member.roles.remove(role)
 
             if (points <= plumes) {
@@ -27,8 +30,17 @@ module.exports = {
         })
         if(roleToAdd != 0){
             member.roles.add(roleToAdd)
+
+            if(roleBefore != roleToAdd.id){
+                client.channels.fetch(dataConfig.get("channels.plumes"))
+                .then(channel => channel.send("<@"+member.user.id+"> " + "vient de devenir un " + roleToAdd.name)
+                ).catch(console.error)
+            }
+            
         }
 
-    }
+    },
+
+
 
 }
