@@ -5,8 +5,8 @@ module.exports = {
         const editJsonFile = require("edit-json-file")
         const embed = require("../utils/embed")
 
-        const channelfile = editJsonFile(CHANNELSPATH);
-        const welcome = channelfile.get("welcome")
+        const channelfile = editJsonFile(DATA_CONFIG);
+        const welcome = channelfile.get("channels.welcome")
         const presentation = channelfile.get("presentation")
 
         welcomeMessage = embed.new()
@@ -16,16 +16,15 @@ module.exports = {
         
         const json = require("../utils/json.js")
         const id = json.intToABC(member.user.id)
-        const membersfile = editJsonFile(CHANNELSPATH);
+        const data = editJsonFile(DATA);
 
-        members = membersfile.get("members.list")
-        if(!members.includes(id)){
-                const account = require("../utils/account")
-                account.create(member.user)
+        members = data.get("members.list")
+        if(!members.includes(id)&& !user.bot){
+                const dataUtil = require("../utils/data")
+                dataUtil.accountCreate(member.user)
         }
 
         await client.channels.fetch(welcome)
-        .then(channel => channel.send({ embeds: [welcomeMessage]}));
-		
-	},
-};
+        .then(channel => channel.send({ embeds: [welcomeMessage]}))
+	}
+}
