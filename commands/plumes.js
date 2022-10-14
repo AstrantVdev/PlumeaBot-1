@@ -38,8 +38,6 @@ module.exports = {
             let jsonfile = editJsonFile(DATA);
             plumes = jsonfile.get("members."+stringId + ".plumes")
 
-            plumes
-
             await jsonfile.set("members." + stringId + ".plumes", plumes+p)
             await jsonfile.save()
 
