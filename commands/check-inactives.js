@@ -17,7 +17,7 @@ module.exports = {
         const year = today.getFullYear();
         const todayInt = parseInt(year+month+date)
 
-        const membersfile = editJsonFile(CHANNELSPATH);
+        const membersfile = editJsonFile(DATA);
         const members = membersfile.get("members.list")
         let n = 0
 

@@ -23,25 +23,6 @@ module.exports = {
 	async execute(interaction) {
 		let channel = interaction.options.getString('channel');
 		let id = interaction.options.getString('id');
-		const fileName = CHANNELSPATH;
-		const file = require(fileName);
-
-		switch(channel){
-			case "text":
-				file.text = id;
-			break;
-			case "log":
-				file.log = id;
-			break;
-		}
-			
-		await fs.writeFile(fileName, JSON.stringify(file, null, 2), function writeJSON(err) {
-		  if (err) return console.log(err);
-		  console.log(JSON.stringify(file, null, 2));
-		  console.log('writing to ' + fileName);
-		});
-
-		await interaction.reply({ content: 'Action accomplie avec succès ! :D', ephemeral: true });
 
 	},
 };

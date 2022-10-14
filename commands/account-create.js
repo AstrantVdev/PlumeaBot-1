@@ -12,8 +12,13 @@ module.exports = {
 
 	async execute(interaction) {
         const user = interaction.options.getUser('user');
-        const account = require("../utils/account")
-        account.create(user)
+        const data = editJsonFile(DATA);
+        members = data.get("members.list")
+
+        if(!members.includes(id)&& !user.bot){
+            const data = require("../utils/data")
+            data.accountCreate(user)
+        }
 
         interaction.reply({ephemeral:true,content:"https://tenor.com/view/mujikcboro-seriymujik-gif-24361533"});
 
