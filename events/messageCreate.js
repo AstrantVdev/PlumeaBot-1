@@ -69,10 +69,10 @@ module.exports = {
                         recall.setHours(("0" + (recall.getHours() + 2)).slice(-2))
                         recall.setMinutes(("0" + (recall.getMinutes() + 30)).slice(-2))
         
-                        await(data.set("bump", recall.toString()))
+                        data.set("bump", recall.toString())
     
-                        await(data.save())
-                        await(dataUtils.upload())
+                        data.save()
+                        dataUtils.upload()
                     }
 
                 })
@@ -81,6 +81,6 @@ module.exports = {
 
         }
 		
-	}
+}
 
 }
