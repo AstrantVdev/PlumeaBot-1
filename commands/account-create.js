@@ -11,17 +11,11 @@ module.exports = {
         .setRequired(true)),
 
 	async execute(interaction) {
-        const user = interaction.options.getUser('user');
-        const data = editJsonFile(DATA);
-        members = data.get("members.list")
+        const dataUtils = require("../utils/data")
+        await dataUtils.accountCreate(user)
 
-        if(!members.includes(id)&& !user.bot){
-            const data = require("../utils/data")
-            data.accountCreate(user)
-        }
+        await interaction.reply({ephemeral:true,content:"https://tenor.com/view/mujikcboro-seriymujik-gif-24361533"});
 
-        interaction.reply({ephemeral:true,content:"https://tenor.com/view/mujikcboro-seriymujik-gif-24361533"});
+	}
 
-	},
-
-};
+}
