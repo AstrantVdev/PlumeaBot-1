@@ -11,10 +11,12 @@ module.exports = {
         .setRequired(true)),
 
 	async execute(interaction) {
-        const dataUtils = require("../utils/data")
-        await dataUtils.accountCreate(user)
+        const user = interaction.options.getUser('user');
 
-        await interaction.reply({ephemeral:true,content:"https://tenor.com/view/mujikcboro-seriymujik-gif-24361533"});
+        const dataUtils = require("../utils/data")
+        dataUtils.accountCreate(user)
+
+        interaction.reply({ephemeral:true,content:"https://tenor.com/view/mujikcboro-seriymujik-gif-24361533"});
 
 	}
 
