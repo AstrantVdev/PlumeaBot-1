@@ -8,6 +8,7 @@ module.exports = {
         const channelfile = editJsonFile(DATA_CONFIG);
         const welcome = channelfile.get("channels.welcome")
         const presentation = channelfile.get("presentation")
+        const user = member.user
 
         welcomeMessage = embed.new()
         .setDescription(`**Bienvenue sur Scriptura ${member.user}.**`)
