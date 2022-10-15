@@ -2,15 +2,18 @@ module.exports = {
 	name: 'messageCreate',
 	async execute(message) {
         const editJsonFile = require("edit-json-file")
+        const dataUtils = require("../utils/data.js")
         const dataConfig = editJsonFile(DATA_CONFIG)
+        const data = editJsonFile(DATA)
         const channelName = message.channel.name
         const channelId = message.channel.id
         userId = message.author.id
 
         if (!message.author.bot){
-            json = dataConfig.get("messageReplies")
+            const json = dataConfig.get("messageReplies")
             const triggers = new Map(Object.entries(json))
             const content = message.content
+            const roles = message.member.roles.cache.map(r => `${r}`).length
 
             triggers.forEach((reply,trigger)=>{
                 if (content.includes(trigger)) {
@@ -22,9 +25,22 @@ module.exports = {
                 message.delete()
                 await message.author.send("__**Impossible d'envoyer ce message :**__```md\n#Tu dois faire /post pour poster ton texte :D```")
             }
-                        
-            let roles = message.member.roles.cache.map(r => `${r}`).length
 
+            if(channelId == dataConfig.get("channels.general")){
+                const today = new Date()
+                const recall = new Date(data.get("bump"))
+
+                if(today > recall){
+                    await message.reply("***Bumpy ! :3***")
+                    today.setFullYear(today.getFullYear()+66)
+                    await data.set("bump", today.toString())
+
+                    await data.save()
+                    await dataUtils.upload()
+                }
+
+            }
+                        
             if (roles == 1){
                 if (message.attachments.size == 0 && !message.content.includes("http")) return
                 message.delete()
@@ -44,13 +60,23 @@ module.exports = {
             }
 
             if(userId == 302050872383242240){
-                async function recall() {
-                    await client.channels.fetch(dataConfig.get("channels.general"))
-                    .then(channel => channel.send("***BUMPEZ BANDE DE WELWITSCHIA  MIRABILIS !!! è-é***")
-                    ).catch(console.error)
-                }
-                  
-                setTimeout(recall, 7200*1000, 'bump !')
+                const embeds = message.embeds
+
+                embeds.forEach(embed =>{
+
+                    if(embed.data.description.includes("Bump effectué !")){
+                        const recall = new Date()
+                        recall.setHours(("0" + (recall.getHours() + 2)).slice(-2))
+                        recall.setMinutes(("0" + (recall.getMinutes() + 30)).slice(-2))
+        
+                        await(data.set("bump", recall.toString()))
+    
+                        await(data.save())
+                        await(dataUtils.upload())
+                    }
+
+                })
+
             }
 
         }
