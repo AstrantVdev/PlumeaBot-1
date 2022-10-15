@@ -48,9 +48,9 @@ module.exports = {
 
         members = data.get("members.list")
         const today = new Date()
-        const date = ("0" + today.getDate()).slice(-2);
-        const month = ("0" + (today.getMonth() + 1)).slice(-2);
-        const year = today.getFullYear();
+        const date = ("0" + today.getDate()).slice(-2)
+        const month = ("0" + (today.getMonth() + 1)).slice(-2)
+        const year = today.getFullYear()
 
         members.push(id)
         
@@ -62,7 +62,6 @@ module.exports = {
         await data.save()
 
         await dataUtils.upload()
-
         
     }
 }
