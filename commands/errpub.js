@@ -77,7 +77,7 @@ module.exports = {
 					message += "#Ton texte est une fanfiction. Il contient un matériel source étranger au serveur, copyrighté et non original, et donc par conséquent ne peut pas être commenté par tous. Désolé!\n";
 					break;
 				case '4':
-					message += "#Ton texte porte le dt_auteur d'un autre membre\n";
+					message += "#Ton texte porte le mauvais dt_auteur\n";
 					break;
 				case '0':
 					message += "#Les publications sur ce serveur sont soumises à des consignes. Elles peuvent être complexes à première vue, mais pas de panique ! Si vous avez besoin d'assistance, n'hésitez pas à solliciter le staff.\n";
