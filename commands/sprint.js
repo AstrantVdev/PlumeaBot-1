@@ -39,6 +39,8 @@ module.exports = {
                     await sprint.begin(sprint.getTime(), message.id)
                     await sprint.setTime(-1)
 
+                    await sprint.addSprinter(user.id, words)
+
                     let BEGIN = setInterval(async function() {      
                         await sprint.beginMessage(sprint.getTime())
                         await sprint.timerProgress(+2)
@@ -52,8 +54,6 @@ module.exports = {
                 }
 
                 async function GO(){
-                    await sprint.addSprinter(user.id, words)
-
                     await sprint.setTime(time)
 
                     let GO = setInterval(async function() {      
