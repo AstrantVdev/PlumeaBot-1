@@ -1,8 +1,9 @@
+const editJsonFile = require("edit-json-file")
+
 module.exports = {
     async save(){
         const request = require(`request`)
         const fs = require(`fs`)
-        const editJsonFile = require("edit-json-file")
         const dataConfig = editJsonFile(DATA_CONFIG)
         
         await client.channels.fetch(dataConfig.get("channels.logs"))
@@ -21,28 +22,26 @@ module.exports = {
         const editJsonFile = require("edit-json-file")
         const dataConfig = editJsonFile(DATA_CONFIG);
 
-        await client.channels.fetch(dataConfig.get("channels.logs"))
+        client.channels.fetch(dataConfig.get("channels.logs"))
         .then(channel => 
             channel.messages.fetch(dataConfig.get("messages.data"))
-            .then(m =>
-                m.edit({content:"",
+            .then(async m =>
+                await m.edit({content:"",
                     files: ["./DATA.json"]
                 })) 
         
             .catch(console.error)
         ).catch(console.error)
 
-        await client.channels.fetch(dataConfig.get("channels.logs"))
-        .then(channel => 
-            channel.send({files: ["./DATA.json"]})
+        client.channels.fetch(dataConfig.get("channels.logs"))
+        .then(async channel => 
+            await channel.send({files: ["./DATA.json"]})
             .catch(console.error)
         ).catch(console.error)
     },
 
     async accountCreate(user){
-        const editJsonFile = require("edit-json-file")
         const json = require("./json.js")
-        const dataUtils = require("./data.js")
         const id = json.intToABC(user.id)
         const data = editJsonFile(DATA);
 
@@ -56,12 +55,14 @@ module.exports = {
         
         await data.set("members.list", members)
         await data.set("members." + id +".date", year+month+date)
-        await data.set("members." + id+".plumes", 0)
-        await data.set("members." + id+".scriptucoins", 0)
-        await data.set("members." + id+".pseudo", user.username)
-        await data.save()
+        await data.set("members." + id +".plumes", 0)
+        await data.set("members." + id +".scriptucoins", 0)
+        await data.set("members." + id +".pseudo", user.username)
 
-        await dataUtils.upload()
+        const texts = []
+        await data.set("members." + id +".texts", texts)
+
+        this.upload()
         
     }
 }
