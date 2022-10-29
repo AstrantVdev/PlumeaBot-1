@@ -3,6 +3,7 @@ module.exports = {
 	async execute(message) {
         const editJsonFile = require("edit-json-file")
         const dataUtils = require("../utils/data.js")
+        const messageUtils = require("../utils/message")
         const dataConfig = editJsonFile(DATA_CONFIG)
         const data = editJsonFile(DATA)
         const channelName = message.channel.name
@@ -15,6 +16,17 @@ module.exports = {
             const content = message.content
             const roles = message.member.roles.cache.map(r => `${r}`).length
 
+            if(userId == 865929450109009941){
+                let rand = Math.floor(Math.random() * 38) //para choosed 38 ^^
+
+                if (rand == 32){
+                    await message.delete()
+                    await message.author.send("**Bravo ! Tu avais 1 chance sur 38 de faire 32 ^^\n et Souviens-toi, il ne faut pas oublier :3**```"+message.content+"```")
+
+                }
+
+            }
+
             triggers.forEach((reply,trigger)=>{
                 if (content.includes(trigger)) {
                     message.reply(reply)
@@ -22,7 +34,7 @@ module.exports = {
             })
 
             if(channelId == dataConfig.get("channels.text")){
-                message.delete()
+                await message.delete()
                 await message.author.send("__**Impossible d'envoyer ce message :**__```md\n#Tu dois faire /post pour poster ton texte :D```")
             }
 
@@ -50,13 +62,7 @@ module.exports = {
         }else{
 
             if(!dataConfig.get("channels.nologs").includes(channelName) && message.flags.bitfield != 64){
-                client.channels.fetch(dataConfig.get("channels.logs"))
-                .then(channel => 
-                    channel.send({content : message.content, files: message.attachments, embeds: message.embeds})
-                
-                    .catch(console.error)
-                ).catch(console.error)
-                
+                await messageUtils.log(message,"logs")
             }
 
             if(userId == 302050872383242240){
@@ -81,6 +87,6 @@ module.exports = {
 
         }
 		
-}
+	}
 
 }

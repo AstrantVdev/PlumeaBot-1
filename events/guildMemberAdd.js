@@ -3,16 +3,16 @@ module.exports = {
 	once: false,
 	async execute(member) {
         const editJsonFile = require("edit-json-file")
-        const embed = require("../utils/embed")
+        const message = require("../utils/message")
 
         const channelfile = editJsonFile(DATA_CONFIG);
         const welcome = channelfile.get("channels.welcome")
         const presentation = channelfile.get("presentation")
         const user = member.user
 
-        welcomeMessage = embed.new()
+        welcomeMessage = message.newEmbed()
         .setDescription(`**Bienvenue sur Scriptura ${member.user}.**`)
-        .setAuthor({ name: 'Youpiii !',iconURL: 'https://i.imgur.com/TYeapMy.png', url: 'https://www.youtube.com/watch?v=xvFZjo5PgG0' })
+        .setAuthor({ name: 'Youpiii !',iconURL: 'https://i.imgur.com/TYeapMy.png', url: 'https://tenor.com/view/rickroll-roll-rick-never-gonna-give-you-up-never-gonna-gif-22954713' })
         .setThumbnail(member.user.displayAvatarURL())
         
         const json = require("../utils/json.js")
