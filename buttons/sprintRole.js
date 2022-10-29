@@ -12,7 +12,7 @@ module.exports = {
 
         }else{
             await member.roles.add(sprinterRole)
-            await interaction.reply({content:"Tu n'es plus un sprinter à présent ! :3\nTu seras donc mentionné à chaque sprint...",ephemeral:true})
+            await interaction.reply({content:"Tu es sprinter à présent ! :3\nTu seras donc mentionné à chaque sprint...",ephemeral:true})
 
         }
 
