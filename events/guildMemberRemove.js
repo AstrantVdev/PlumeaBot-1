@@ -12,7 +12,7 @@ module.exports = {
         const welcomeMessage = new EmbedBuilder()
         .setColor(0x2C2F33)
         .setDescription(`**${member.user} nous a quitté !!!**`)
-        .setAuthor({ name: 'Niooon !',iconURL: 'https://i.imgur.com/xr9Tmfi.png', url: 'https://discord.gg/Fz5xkA4X6f' })
+        .setAuthor({ name: 'Niooon !',iconURL: 'https://i.imgur.com/TYeapMy.png', url: 'https://discord.gg/Fz5xkA4X6f' })
         .setThumbnail(member.user.displayAvatarURL())
         .setTimestamp()
 
