@@ -9,10 +9,12 @@
     "welcome": "1027100082941722664",
     "presentation": "1027100364467609621",
     "text": "1027098982264090644",
+    "textForum":"1027242644881018930",
     "general": "1027089727360344147",
+    "sprint":"1033700109638176848",
     "cya": "1027092975639085096",
-    "logs": "1030090211272708156",
     "delete":"1030502389645574154",
+    "logs": "1030090211272708156",
     "nologs": ["💾scriptu-logs","👀panoptique-del"]
   },
   "roles": {
@@ -26,7 +28,13 @@
   "messageReplies": {
     "CHAD": "https://tenor.com/view/mujikcboro-seriymujik-gif-24361533",
     "rick": "https://tenor.com/view/rickroll-rick-roll-gif-gif-25399889",
-    "nuc": "https://i.imgur.com/N3oxDNW.gifv",
-    "rank": "https://i.imgur.com/d1g1cEq.gif"
+    "NUCK": "https://i.imgur.com/N3oxDNW.gifv",
+    "RANK": "https://i.imgur.com/hK9qUWc.gifv"
+  },
+  "emotes":{
+    "plume":"<:Scriptuplume:1027094890099781673>"
+  },
+  "rolesId":{
+    "sprinter":"1035491420141781123"
   }
 }
