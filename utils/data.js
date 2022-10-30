@@ -55,6 +55,7 @@ module.exports = {
         
         await data.set("members.list", members)
         await data.set("members." + id +".date", year+month+date)
+        await data.set("members." + id +".weeklyWords", year+month+date)
         await data.set("members." + id +".plumes", 0)
         await data.set("members." + id +".scriptucoins", 0)
         await data.set("members." + id +".pseudo", user.username)
