@@ -16,6 +16,7 @@ module.exports = {
             const content = message.content
             const roles = message.member.roles.cache.map(r => `${r}`).length
 
+            /*
             if(userId == 865929450109009941){
                 let rand = Math.floor(Math.random() * 38) //para choosed 38 ^^
 
@@ -26,6 +27,7 @@ module.exports = {
                 }
 
             }
+            */
 
             triggers.forEach((reply,trigger)=>{
                 if (content.includes(trigger)) {
