@@ -7,7 +7,7 @@ module.exports = {
         const roles = new Map(Object.entries(json))
         
         found =  false
-        lower = 0
+        lower = interaction.guild.roles.cache.get(roles.get(1))
         roleBefore = 0
         await roles.forEach(async (points, roleid)=>{
             const role = interaction.guild.roles.cache.get(roleid)
