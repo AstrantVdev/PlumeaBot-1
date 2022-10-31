@@ -52,7 +52,7 @@ module.exports = {
 
 		}
 
-		setTimeout(() =>dataUtil.upload(), 10000)
+		setTimeout(() =>dataUtil.upload(), 3000)
 		
 	}
 
