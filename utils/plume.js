@@ -7,7 +7,7 @@ module.exports = {
         const roles = new Map(Object.entries(json))
         
         found =  false
-        lower = interaction.guild.roles.cache.get(roles.get(1))
+        lower = 0
         roleBefore = 0
         await roles.forEach(async (points, roleid)=>{
             const role = interaction.guild.roles.cache.get(roleid)
@@ -18,7 +18,7 @@ module.exports = {
             if (points <= plumes) {
                 lower = role
             }else{
-                if(!found){
+                if(!found && lower != 0){
                     found = true
 
                     await member.roles.add(lower)
