@@ -62,8 +62,8 @@ module.exports = {
 
         const texts = []
         await data.set("members." + id +".texts", texts)
-
-        this.upload()
+        await data.save()
         
     }
+    
 }
