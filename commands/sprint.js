@@ -13,7 +13,7 @@ module.exports = {
     .addIntegerOption(option => option
         .setName('words')
         .setDescription("Ton nombre de mots de départ")
-        .setMinValue(1)
+        .setMinValue(0)
         .setMaxValue(999999)
         .setRequired(true))
     .setDescription("Bah ca lance un Sprint... O.o"),
