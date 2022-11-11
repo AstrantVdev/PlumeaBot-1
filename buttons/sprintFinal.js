@@ -10,7 +10,7 @@ module.exports = {
 		const words = new TextInputBuilder()
 			.setCustomId('words')
 			.setLabel("n")
-            .setMinLength(2)
+            .setMinLength(0)
             .setRequired(true)
             .setMaxLength(6)
 			.setStyle(TextInputStyle.Short)
