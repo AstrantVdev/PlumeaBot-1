@@ -10,9 +10,8 @@ module.exports = {
 		const words = new TextInputBuilder()
 			.setCustomId('words')
 			.setLabel("n")
-            .setMinLength(2)
-            .setRequired(true)
-            .setMaxLength(6)
+		        .setRequired(true)
+		        .setMaxLength(6)
 			.setStyle(TextInputStyle.Short)
 
 		const firstActionRow = new ActionRowBuilder().addComponents(words)
