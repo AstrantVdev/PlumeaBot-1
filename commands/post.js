@@ -113,8 +113,8 @@ module.exports = {
                 weekly = membersUtil.getWeeklyWords(user.id)
                 await interaction.reply({ content: "**NO !** Pas plus de 20k par semaine bro\nMots : "+words+" Mots de la semaine : "+weekly+"\nhttps://tenor.com/view/no-chad-giga-chad-giga-chet-gif-25063092", ephemeral: true });
 
-            }else if (words < 500){
-                await interaction.reply({ content: "**NO !**  Soit un chad et envoie plus de 500 mots bro\nMots : "+words+"\nhttps://tenor.com/view/no-chad-giga-chad-giga-chet-gif-25063092", ephemeral: true });
+            }else if (words < 1000){
+                await interaction.reply({ content: "**NO !**  Soit un chad et envoie plus de 1000 mots bro\nMots : "+words+"\nhttps://tenor.com/view/no-chad-giga-chad-giga-chet-gif-25063092", ephemeral: true });
 
             }else{
                 exist()
