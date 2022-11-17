@@ -25,6 +25,28 @@ module.exports = {
         return time
     },
 
+    launchEndMessage(time){
+
+        setTimeout(() => {
+            const data = editJsonFile(DATA)
+
+            const id = data.get("sprint.message")
+            const channel = dataConfig.get("channels.sprint")
+            const sprintRole = dataConfig.get("rolesId.sprinter")
+
+            client.channels.fetch(channel)
+            .then(channel => 
+                channel.messages.fetch(id)
+                .then(async m =>
+                    await m.reply("<@&"+sprintRole+"> **Le sprint est terminé ! :3**"))
+                .catch(console.error)
+    
+            ).catch(console.error)
+
+        }, (time+1)*60*1000);  
+
+    },
+
     async setTime(min){
         const data = editJsonFile(DATA)
 
