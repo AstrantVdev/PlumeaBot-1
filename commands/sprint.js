@@ -1,5 +1,4 @@
-const { SlashCommandBuilder, PermissionFlagsBits, CommandInteractionOptionResolver } = require('discord.js');
-const { off } = require('process');
+const { SlashCommandBuilder} = require('discord.js')
 
 module.exports = {
 	data: new SlashCommandBuilder()
@@ -52,6 +51,8 @@ module.exports = {
          
                     }, 2000)
                 }
+
+                sprint.launchEndMessage(time)             
 
                 async function GO(){
                     await sprint.setTime(time)
