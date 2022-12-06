@@ -64,6 +64,25 @@ module.exports = {
         await data.set("members." + id +".texts", texts)
         await data.save()
         
+    },
+
+    async accountRemove(user){
+        const json = require("./json.js")
+        const id = json.intToABC(user.id)
+        const data = editJsonFile(DATA);
+
+        members = data.get("members.list")
+        const today = new Date()
+        const date = ("0" + today.getDate()).slice(-2)
+        const month = ("0" + (today.getMonth() + 1)).slice(-2)
+        const year = today.getFullYear()
+
+        members.remove(id)
+        
+        await data.set("members.list", members)
+        await data.set("members." + id, null)
+        await data.save()
+        
     }
     
 }
