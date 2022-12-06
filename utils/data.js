@@ -77,7 +77,7 @@ module.exports = {
         const month = ("0" + (today.getMonth() + 1)).slice(-2)
         const year = today.getFullYear()
 
-        members.remove(id)
+        members = members.filter(function(item) {return item !== id})
         
         await data.set("members.list", members)
         await data.set("members." + id, null)
