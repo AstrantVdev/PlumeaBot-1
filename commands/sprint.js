@@ -33,7 +33,8 @@ module.exports = {
             if(sprint.isChannel(channelId)){
                 const sprintRole = dataConfig.get("rolesId.sprinter")
 
-                await interaction.reply("<@&"+sprintRole+">***Sprint ! :3***")    
+                await interaction.reply("***Sprint ! :3***")
+                await interaction.channel.send("<@&"+sprintRole+">")    
                 message = await interaction.channel.send("EN AVANT !")    
         
                 await BEGIN()
