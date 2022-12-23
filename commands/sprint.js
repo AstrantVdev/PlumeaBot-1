@@ -1,4 +1,5 @@
 const { SlashCommandBuilder} = require('discord.js')
+const editJsonFile = require("edit-json-file")
 const dataConfig = editJsonFile(DATA_CONFIG)
 
 module.exports = {
