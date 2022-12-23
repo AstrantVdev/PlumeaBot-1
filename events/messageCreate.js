@@ -63,8 +63,12 @@ module.exports = {
 
         }else{
 
-            if(!dataConfig.get("channels.nologs").includes(channelName) && message.flags.bitfield != 64){
-                await messageUtils.log(message,"logs")
+            if(userId == 1018969464739467317){
+
+                if(!dataConfig.get("channels.nologs").includes(channelName) && message.flags.bitfield != 64){
+                    await messageUtils.log(message,"logs")
+                }
+
             }
 
             if(userId == 302050872383242240){
