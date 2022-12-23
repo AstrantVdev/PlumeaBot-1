@@ -32,7 +32,6 @@ module.exports = {
 
             const id = data.get("sprint.message")
             const channel = dataConfig.get("channels.sprint")
-            const sprintRole = dataConfig.get("rolesId.sprinter")
 
             client.channels.fetch(channel)
             .then(channel =>{
@@ -43,9 +42,9 @@ module.exports = {
                 ).catch(console.error)
 
                 this.getSprinters().forEach(sprinterABC =>{
-                    id = json.ABCtoInt(sprinterABC)
+                    sprinterId = json.ABCtoInt(sprinterABC)
 
-                    channel.send("<@"+id+">")
+                    channel.send("<@"+sprinterId+">")
                 })
 
             }).catch(console.error)
