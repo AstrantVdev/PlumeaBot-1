@@ -34,14 +34,14 @@ module.exports = {
             const channel = dataConfig.get("channels.sprint")
 
             client.channels.fetch(channel)
-            .then(channel =>{
-                channel.messages.fetch(id)
+            .then(async channel =>{
+                await channel.messages.fetch(id)
                 .then(m =>
                     m.reply("**Le sprint est terminé ! :3**")
 
                 ).catch(console.error)
 
-                this.getSprinters().forEach(sprinterABC =>{
+                await this.getSprinters().forEach(sprinterABC =>{
                     sprinterId = json.ABCtoInt(sprinterABC)
 
                     channel.send("<@"+sprinterId+">")
