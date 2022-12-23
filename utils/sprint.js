@@ -35,13 +35,20 @@ module.exports = {
             const sprintRole = dataConfig.get("rolesId.sprinter")
 
             client.channels.fetch(channel)
-            .then(channel => 
+            .then(channel =>{
                 channel.messages.fetch(id)
                 .then(async m =>
-                    await m.reply("<@&"+sprintRole+"> **Le sprint est terminé ! :3**"))
-                .catch(console.error)
-    
-            ).catch(console.error)
+                    await m.reply("**Le sprint est terminé ! :3**")
+
+                ).catch(console.error)
+
+                this.getSprinters().forEach(sprinterABC =>{
+                    id = json.ABCtoInt(sprinterABC)
+
+                    channel.send("<@"+id+">")
+                })
+
+            }).catch(console.error)
 
         }, (time+1)*60*1000);  
 
