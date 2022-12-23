@@ -41,10 +41,10 @@ module.exports = {
 
                 ).catch(console.error)
 
-                this.getSprinters().forEach(sprinterABC =>{
+                this.getSprinters().forEach(async sprinterABC =>{
                     sprinterId = json.ABCtoInt(sprinterABC)
 
-                    channel.send("<@"+sprinterId+">")
+                    await channel.send("<@"+sprinterId+">")
                 })
 
             }).catch(console.error)
@@ -230,7 +230,7 @@ module.exports = {
         .then(channel => 
             channel.messages.fetch(id)
             .then(async m =>
-                await m.edit({content:"<@&"+dataConfig.get("rolesId.sprinter")+">",embeds:[embed],components: [await this.roleButton(), await this.joinButton()] }))      
+                await m.edit({embeds:[embed],components: [await this.roleButton(), await this.joinButton()] }))      
             .catch(console.error)
 
         ).catch(console.error)
@@ -259,7 +259,7 @@ module.exports = {
         .then(channel => 
             channel.messages.fetch(id)
             .then(async m =>
-                await m.edit({content:"<@&"+dataConfig.get("rolesId.sprinter")+">",embeds:[embed],components: [await this.finalButton()]}))      
+                await m.edit({embeds:[embed],components: [await this.finalButton()]}))      
             .catch(console.error)
 
         ).catch(console.error)
@@ -314,7 +314,7 @@ module.exports = {
         .then(channel => 
             channel.messages.fetch(id)
             .then(async m =>
-                await m.edit({content:"<@&"+dataConfig.get("rolesId.sprinter")+">",embeds:[embed],components: [await this.finalButton()]}))      
+                await m.edit({embeds:[embed],components: [await this.finalButton()]}))      
             .catch(console.error)
 
         ).catch(console.error)
