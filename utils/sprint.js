@@ -123,7 +123,7 @@ module.exports = {
         .then(channel => 
             channel.messages.fetch(id)
             .then(async m =>
-                await m.edit({content:"<@&"+dataConfig.get("rolesId.sprinter")+">",embeds:[embed],components: [this.roleButton(), await this.joinButton()]}))      
+                await m.edit({embeds:[embed],components: [this.roleButton(), await this.joinButton()]}))      
             .catch(console.error)
 
         ).catch(console.error)
