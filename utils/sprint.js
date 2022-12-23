@@ -36,15 +36,15 @@ module.exports = {
             client.channels.fetch(channel)
             .then(channel =>{
                 channel.messages.fetch(id)
-                .then(async m =>
-                    await m.reply("**Le sprint est terminé ! :3**")
+                .then(m =>
+                    m.reply("**Le sprint est terminé ! :3**")
 
                 ).catch(console.error)
 
-                this.getSprinters().forEach(async sprinterABC =>{
+                this.getSprinters().forEach(sprinterABC =>{
                     sprinterId = json.ABCtoInt(sprinterABC)
 
-                    await channel.send("<@"+sprinterId+">")
+                    channel.send("<@"+sprinterId+">")
                 })
 
             }).catch(console.error)
