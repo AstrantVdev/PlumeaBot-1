@@ -1,4 +1,5 @@
 const { SlashCommandBuilder} = require('discord.js')
+const dataConfig = editJsonFile(DATA_CONFIG)
 
 module.exports = {
 	data: new SlashCommandBuilder()
@@ -29,6 +30,8 @@ module.exports = {
         if(!sprint.isSprinting()){
 
             if(sprint.isChannel(channelId)){
+                const sprintRole = dataConfig.get("rolesId.sprinter")
+
                 await interaction.reply("<@&"+sprintRole+">***Sprint ! :3***")    
                 message = await interaction.channel.send("EN AVANT !")    
         
