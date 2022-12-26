@@ -1,4 +1,4 @@
-const { Client, GatewayIntentBits, Collection, InteractionCollector } = require('discord.js')
+const { Client, GatewayIntentBits, Collection } = require('discord.js')
 global.DATA = "DATA.json"
 global.DATA_CONFIG = "DATA_CONFIG.json"
 const path = require('path')
@@ -22,14 +22,14 @@ global.client = new Client({
         GatewayIntentBits.GuildVoiceStates,
         GatewayIntentBits.GuildWebhooks,
         GatewayIntentBits.Guilds,
-        GatewayIntentBits.MessageContent
+        GatewayIntentBits.MessageContent,
     ]
 })
 
 //CommandHandler
-client.commands = new Collection();
-const commandsPath = path.join(__dirname, 'commands');
-const commandFiles = fs.readdirSync(commandsPath).filter(file => file.endsWith('.js'));
+client.commands = new Collection()
+const commandsPath = path.join(__dirname, 'commands')
+const commandFiles = fs.readdirSync(commandsPath).filter(file => file.endsWith('.js'))
 
 for (const file of commandFiles) {
 	const filePath = path.join(commandsPath, file)
@@ -37,6 +37,7 @@ for (const file of commandFiles) {
 	// Set a new item in the Collection
 	// With the key as the command name and the value as the exported module
 	client.commands.set(command.data.name, command)
+
 }
 
 //EventHandler
@@ -57,7 +58,8 @@ for (const file of eventFiles) {
 start()
 
 async function start(){
-    await client.login(process.env.TOKEN);
+    const {token} = require('./config.json');
+    await client.login(token)
     
     const dataUtil = require("./utils/data.js")
     await dataUtil.save()
