@@ -1,35 +1,35 @@
-const { Client, GatewayIntentBits, Collection } = require('discord.js')
-global.DATA = "DATA.json"
-global.DATA_CONFIG = "DATA_CONFIG.json"
+const { Client, GatewayIntentBits, Collection, InteractionCollector } = require('discord.js')
 const path = require('path')
 const fs = require('fs')
+global.DATA = "DATA.json"
+global.DATA_CONFIG = "DATA_CONFIG.json"
 
 global.client = new Client({
-        intents: [
-            GatewayIntentBits.DirectMessageReactions,
-            GatewayIntentBits.DirectMessageTyping,
-            GatewayIntentBits.DirectMessages,
-            GatewayIntentBits.GuildBans,
-            GatewayIntentBits.GuildEmojisAndStickers,
-            GatewayIntentBits.GuildIntegrations,
-            GatewayIntentBits.GuildInvites,
-            GatewayIntentBits.GuildMembers,
-            GatewayIntentBits.GuildMessageReactions,
-            GatewayIntentBits.GuildMessageTyping,
-            GatewayIntentBits.GuildMessages,
-            GatewayIntentBits.GuildPresences,
-            GatewayIntentBits.GuildScheduledEvents,
-            GatewayIntentBits.GuildVoiceStates,
-            GatewayIntentBits.GuildWebhooks,
-            GatewayIntentBits.Guilds,
-            GatewayIntentBits.MessageContent,
-        ]
-    })
+    intents: [
+        GatewayIntentBits.DirectMessageReactions,
+        GatewayIntentBits.DirectMessageTyping,
+        GatewayIntentBits.DirectMessages,
+        GatewayIntentBits.GuildBans,
+		GatewayIntentBits.GuildEmojisAndStickers,
+		GatewayIntentBits.GuildIntegrations,
+        GatewayIntentBits.GuildInvites,
+        GatewayIntentBits.GuildMembers,
+        GatewayIntentBits.GuildMessageReactions,
+        GatewayIntentBits.GuildMessageTyping,
+        GatewayIntentBits.GuildMessages,
+		GatewayIntentBits.GuildPresences,
+        GatewayIntentBits.GuildScheduledEvents,
+        GatewayIntentBits.GuildVoiceStates,
+        GatewayIntentBits.GuildWebhooks,
+        GatewayIntentBits.Guilds,
+        GatewayIntentBits.MessageContent
+    ]
+})
 
 //CommandHandler
-client.commands = new Collection()
-const commandsPath = path.join(__dirname, 'commands')
-const commandFiles = fs.readdirSync(commandsPath).filter(file => file.endsWith('.js'))
+client.commands = new Collection();
+const commandsPath = path.join(__dirname, 'commands');
+const commandFiles = fs.readdirSync(commandsPath).filter(file => file.endsWith('.js'));
 
 for (const file of commandFiles) {
 	const filePath = path.join(commandsPath, file)
@@ -37,7 +37,6 @@ for (const file of commandFiles) {
 	// Set a new item in the Collection
 	// With the key as the command name and the value as the exported module
 	client.commands.set(command.data.name, command)
-
 }
 
 //EventHandler
@@ -55,11 +54,11 @@ for (const file of eventFiles) {
 	}
 }
 
-function start(){    
-    client.login(process.env.TOKEN);
+start()
+
+async function start(){
+    await client.login(process.env.TOKEN);
     
     const dataUtil = require("./utils/data.js")
-    dataUtil.save()
+    await dataUtil.save()
 }
-
-start()
