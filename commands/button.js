@@ -21,7 +21,7 @@ module.exports = {
         switch(value){
             case "1":
                 await interaction.channel.send({content : `Appuis sur ce bouton pour avoir le rôle ${dataConfig.get("roleId.tournament")} :`
-                , components: await this.tournamentRole()})
+                , components: [await this.tournamentRole()]})
         }
         
 		await interaction.reply({ content: "Action accomplie avec succès ! :D", ephemeral: true })
