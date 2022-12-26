@@ -5,7 +5,7 @@ module.exports = {
     
     async execute(member, interaction){
         tournamentRole = dataConfig.get("rolesId.tournament")
-        
+
         if(member.roles.cache.has(tournamentRole)){
             await member.roles.remove(tournamentRole)
             await interaction.reply({content:"Okay... ;-;",ephemeral:true})
@@ -15,8 +15,8 @@ module.exports = {
             await interaction.reply({content:
 
                 `Vous avez désormais accès aux salons 
-                <@#${dadataConfig.get("channels.tournamentRules")}> 
-                et <@#${dadataConfig.get("channels.monthlyNovel")}>`
+                <@#${dataConfig.get("channels.tournamentRules")}> 
+                et <@#${dataConfig.get("channels.monthlyNovel")}>`
 
                 ,ephemeral:true})
 
