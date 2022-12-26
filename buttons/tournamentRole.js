@@ -12,13 +12,11 @@ module.exports = {
 
         }else{
             await member.roles.add(tournamentRole)
-            await interaction.reply({content:
-
-                `Vous avez désormais accès aux salons 
-                <#${dataConfig.get("channels.tournamentRules")}> 
-                et <#${dataConfig.get("channels.monthlyNovel")}>`
-
-                ,ephemeral:true})
+            await interaction.reply({
+                content:
+                `Vous avez désormais accès aux salons <#${dataConfig.get("channels.tournamentRules")}> et <#${dataConfig.get("channels.monthlyNovel")}>`,
+                ephemeral:
+                true})
 
         }
 
