@@ -4,27 +4,38 @@ global.DATA_CONFIG = "DATA_CONFIG.json"
 const path = require('path')
 const fs = require('fs')
 
-global.client = new Client({
-    intents: [
-        GatewayIntentBits.DirectMessageReactions,
-        GatewayIntentBits.DirectMessageTyping,
-        GatewayIntentBits.DirectMessages,
-        GatewayIntentBits.GuildBans,
-		GatewayIntentBits.GuildEmojisAndStickers,
-		GatewayIntentBits.GuildIntegrations,
-        GatewayIntentBits.GuildInvites,
-        GatewayIntentBits.GuildMembers,
-        GatewayIntentBits.GuildMessageReactions,
-        GatewayIntentBits.GuildMessageTyping,
-        GatewayIntentBits.GuildMessages,
-		GatewayIntentBits.GuildPresences,
-        GatewayIntentBits.GuildScheduledEvents,
-        GatewayIntentBits.GuildVoiceStates,
-        GatewayIntentBits.GuildWebhooks,
-        GatewayIntentBits.Guilds,
-        GatewayIntentBits.MessageContent,
-    ]
-})
+global.client = null
+
+function start(){
+    global.client = new Client({
+        intents: [
+            GatewayIntentBits.DirectMessageReactions,
+            GatewayIntentBits.DirectMessageTyping,
+            GatewayIntentBits.DirectMessages,
+            GatewayIntentBits.GuildBans,
+            GatewayIntentBits.GuildEmojisAndStickers,
+            GatewayIntentBits.GuildIntegrations,
+            GatewayIntentBits.GuildInvites,
+            GatewayIntentBits.GuildMembers,
+            GatewayIntentBits.GuildMessageReactions,
+            GatewayIntentBits.GuildMessageTyping,
+            GatewayIntentBits.GuildMessages,
+            GatewayIntentBits.GuildPresences,
+            GatewayIntentBits.GuildScheduledEvents,
+            GatewayIntentBits.GuildVoiceStates,
+            GatewayIntentBits.GuildWebhooks,
+            GatewayIntentBits.Guilds,
+            GatewayIntentBits.MessageContent,
+        ]
+    })
+    
+    client.login(process.env.TOKEN);
+    
+    const dataUtil = require("./utils/data.js")
+    dataUtil.save()
+}
+
+start()
 
 //CommandHandler
 client.commands = new Collection()
@@ -54,12 +65,3 @@ for (const file of eventFiles) {
 		client.on(event.name, (...args) => event.execute(...args));
 	}
 }
-
-function start(){
-    client.login(process.env.TOKEN);
-    
-    const dataUtil = require("./utils/data.js")
-    dataUtil.save()
-}
-
-start()
