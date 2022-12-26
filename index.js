@@ -4,10 +4,7 @@ global.DATA_CONFIG = "DATA_CONFIG.json"
 const path = require('path')
 const fs = require('fs')
 
-global.client = null
-
-function start(){
-    global.client = new Client({
+global.client = new Client({
         intents: [
             GatewayIntentBits.DirectMessageReactions,
             GatewayIntentBits.DirectMessageTyping,
@@ -28,14 +25,6 @@ function start(){
             GatewayIntentBits.MessageContent,
         ]
     })
-    
-    client.login(process.env.TOKEN);
-    
-    const dataUtil = require("./utils/data.js")
-    dataUtil.save()
-}
-
-start()
 
 //CommandHandler
 client.commands = new Collection()
@@ -65,3 +54,12 @@ for (const file of eventFiles) {
 		client.on(event.name, (...args) => event.execute(...args));
 	}
 }
+
+function start(){    
+    client.login(process.env.TOKEN);
+    
+    const dataUtil = require("./utils/data.js")
+    dataUtil.save()
+}
+
+start()
