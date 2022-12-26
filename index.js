@@ -57,7 +57,6 @@ for (const file of eventFiles) {
 start()
 
 async function start(){
-	
     await client.login(process.env.TOKEN);
     
     const dataUtil = require("./utils/data.js")
