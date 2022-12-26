@@ -58,7 +58,7 @@ start()
 
 async function start(){
 	
-	await global.client = new Client({
+	global.client = await new Client({
     intents: [
         GatewayIntentBits.DirectMessageReactions,
         GatewayIntentBits.DirectMessageTyping,
