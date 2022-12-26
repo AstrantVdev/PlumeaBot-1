@@ -39,6 +39,23 @@ module.exports = {
         client.channels.fetch(dataConfig.get("channels."+type))
 		.then(channel => channel.send(messageUtil.get(message)))
 		.catch(console.error)
+    },
+
+    getChannel(id){
+
+        client.channels.fetch(id)
+        .then(channel => {return channel
+         }).catch(console.error)
+
+    },
+
+    getMessage(id, channelId){
+
+        this.getChannel(channelId).messages.fetch(id)
+        .then(m => {
+            return m
+        }).catch(console.error)
+
     }
     
 }
