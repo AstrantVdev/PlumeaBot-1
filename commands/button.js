@@ -1,6 +1,7 @@
 const { SlashCommandBuilder, PermissionFlagsBits } = require("discord.js");
+const { ActionRowBuilder, ButtonBuilder, ButtonStyle} = require('discord.js')
 const editJsonFile = require("edit-json-file")
-const dataConfig = editJsonFile("DATA_CONFIG.json")
+const dataConfig = editJsonFile(DATA_CONFIG)
 
 module.exports = {
 	data: new SlashCommandBuilder()
@@ -33,7 +34,7 @@ module.exports = {
             new ButtonBuilder()
                 .setCustomId("tournamentRole")
                 .setEmoji("1056933963198890045>")
-                .setStyle("SUCCESS")
+                .setStyle(ButtonStyle.Danger)
         )
 
         return sprintRole
