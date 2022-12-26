@@ -25,7 +25,7 @@ module.exports = {
                 dataUtil.accountCreate(member.user)
         }
 
-        await client.channels.cache.fetch(welcome)
+        await client.channels.fetch(welcome)
         .then(channel => channel.send({ embeds: [welcomeMessage]}))
 	}
 }
