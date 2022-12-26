@@ -5,7 +5,7 @@ module.exports = {
     
     async execute(member, interaction){
         tournamentRole = dataConfig.get("rolesId.tournament")
-        console.print("tett")
+        
         if(member.roles.cache.has(tournamentRole)){
             await member.roles.remove(tournamentRole)
             await interaction.reply({content:"Okay... ;-;",ephemeral:true})
