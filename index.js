@@ -55,11 +55,11 @@ for (const file of eventFiles) {
 	}
 }
 
-async function start(){
-    await client.login(process.env.TOKEN);
+function start(){
+    client.login(process.env.TOKEN);
     
     const dataUtil = require("./utils/data.js")
-    await dataUtil.save()
+    dataUtil.save()
 }
 
 start()
