@@ -55,11 +55,9 @@ for (const file of eventFiles) {
 	}
 }
 
-async function start(){
+function start(){
     client.login(process.env.TOKEN);
     
-    await new Promise(resolve => setTimeout(resolve, 5000));
-
     const dataUtil = require("./utils/data.js")
     dataUtil.save()
 }
