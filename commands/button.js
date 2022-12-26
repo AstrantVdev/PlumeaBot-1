@@ -20,7 +20,7 @@ module.exports = {
 
         switch(value){
             case "1":
-                await interaction.channel.send({content : `Appuis sur ce bouton pour avoir le rôle <@r${await dataConfig.get("rolesId.tournament")}> :`
+                await interaction.channel.send({content : `Appuis sur ce bouton pour avoir le rôle <@&${await dataConfig.get("rolesId.tournament")}> :`
                 , components: [await this.tournamentRole()]})
         }
         
