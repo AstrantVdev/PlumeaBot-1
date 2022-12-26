@@ -33,7 +33,7 @@ module.exports = {
         .addComponents(
             new ButtonBuilder()
                 .setCustomId("tournamentRole")
-                .setEmoji("1056933963198890045")
+                .setEmoji("<:Scriptuplume:1027094890099781673>")
                 .setStyle(ButtonStyle.Danger)
         )
 
