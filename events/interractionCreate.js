@@ -34,6 +34,10 @@ module.exports = {
 					const sprintFinal = require("../buttons/sprintFinal.js")
 					sprintFinal.execute(interaction)
 				break;
+				case "tournamentRole":
+					const tournamentRole = require("../buttons/tournamentRole.js")
+					tournamentRole.execute(interaction)
+				break;
 			}
 
 		}else if(interaction.isModalSubmit()){
