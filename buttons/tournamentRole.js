@@ -1,6 +1,6 @@
 const { SlashCommandBuilder, PermissionFlagsBits } = require("discord.js");
 const editJsonFile = require("edit-json-file")
-const dataConfig = editJsonFile("DATA_CONFIG.json")
+const dataConfig = editJsonFile(DATA_CONFIG)
 
 module.exports = {
 	data: new SlashCommandBuilder()
