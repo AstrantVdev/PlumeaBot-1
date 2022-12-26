@@ -12,8 +12,8 @@ module.exports = {
 		option.setName("name")
 			.setDescription("Button's name")
 			.addChoices(
-				{ name: "tournamentRole", value: "1" }
-			)), 
+				{ name: "tournamentRole", value: "1" })
+            .setRequired(true)), 
 
 	async execute(interaction) {
         const value = interaction.options.getString("name")
