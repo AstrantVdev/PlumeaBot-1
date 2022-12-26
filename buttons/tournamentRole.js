@@ -1,5 +1,5 @@
 const editJsonFile = require("edit-json-file")
-const dadataConfig = editJsonFile("DATA_CONFIG.json")
+const dataConfig = editJsonFile("DATA_CONFIG.json")
 
 module.exports = {
     
