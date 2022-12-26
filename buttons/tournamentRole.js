@@ -1,27 +1,42 @@
+const { SlashCommandBuilder, PermissionFlagsBits } = require("discord.js");
 const editJsonFile = require("edit-json-file")
-const dadataConfig = editJsonFile(DATA_CONFIG)
+const dataConfig = editJsonFile("DATA_CONFIG.json")
 
 module.exports = {
-    
-    async execute(member, interaction){
-        tournamentRole = dataConfig.get("rolesId.tournament")
+	data: new SlashCommandBuilder()
+	.setName("button")
+    .setDescription("Create a button")
+    .setDefaultMemberPermissions(PermissionFlagsBits.Administrator)
+	.addStringOption(option =>
+		option.setName("name")
+			.setDescription("Button's name")
+			.addChoices(
+				{ name: "tournamentRole", value: "1" }
+			)), 
 
-        if(member.roles.cache.has(tournamentRole)){
-            await member.roles.remove(tournamentRole)
-            await interaction.reply({content:"Okay... ;-;",ephemeral:true})
+	async execute(interaction) {
+        const value = interaction.options.getString("name")
 
-        }else{
-            await member.roles.add(tournamentRole)
-            await interaction.reply({content:
-
-                `Vous avez désormais accès aux salons 
-                <@#${dadataConfig.get("channels.tournamentRules")}> 
-                et <@#${dadataConfig.get("channels.monthlyNovel")}>`
-
-                ,ephemeral:true})
-
+        switch(value){
+            case "1":
+                await interaction.channel.send({content : `Appuis sur ce bouton pour avoir le rôle ${dataConfig.get("roleId.tournament")} :`
+                , components: await this.tournamentRole()})
         }
+        
+		await interaction.reply({ content: "Action accomplie avec succès ! :D", ephemeral: true })
 
-    }
+	},
+
+    tournamentRole(){
+        const sprintRole = new ActionRowBuilder()
+        .addComponents(
+            new ButtonBuilder()
+                .setCustomId("tournamentRole")
+                .setEmoji("1056933963198890045>")
+                .setStyle("SUCCESS")
+        )
+
+        return sprintRole
+    },
 
 }
