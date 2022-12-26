@@ -1,8 +1,8 @@
 const { Client, GatewayIntentBits, Collection, InteractionCollector } = require('discord.js')
-const path = require('path')
-const fs = require('fs')
 global.DATA = "DATA.json"
 global.DATA_CONFIG = "DATA_CONFIG.json"
+const path = require('path')
+const fs = require('fs')
 
 global.client = new Client({
     intents: [
