@@ -1,10 +1,10 @@
-const { Client, GatewayIntentBits, Collection, InteractionCollector, Intents } = require('discord.js')
+const { Client, Collection, IntentsBitField } = require('discord.js')
 const path = require('path')
 const fs = require('fs')
 global.DATA = "DATA.json"
 global.DATA_CONFIG = "DATA_CONFIG.json"
 
-const allIntents = new Intents(7796)
+const allIntents = new IntentsBitField(7796);
 global.client = new Client({ intents: allIntents })
 
 //CommandHandler
