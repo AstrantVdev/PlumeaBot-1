@@ -4,27 +4,8 @@ const fs = require('fs')
 global.DATA = "DATA.json"
 global.DATA_CONFIG = "DATA_CONFIG.json"
 
-global.client = new Client({
-    intents: [
-        GatewayIntentBits.DirectMessageReactions,
-        GatewayIntentBits.DirectMessageTyping,
-        GatewayIntentBits.DirectMessages,
-        GatewayIntentBits.GuildBans,
-		GatewayIntentBits.GuildEmojisAndStickers,
-		GatewayIntentBits.GuildIntegrations,
-        GatewayIntentBits.GuildInvites,
-        GatewayIntentBits.GuildMembers,
-        GatewayIntentBits.GuildMessageReactions,
-        GatewayIntentBits.GuildMessageTyping,
-        GatewayIntentBits.GuildMessages,
-		GatewayIntentBits.GuildPresences,
-        GatewayIntentBits.GuildScheduledEvents,
-        GatewayIntentBits.GuildVoiceStates,
-        GatewayIntentBits.GuildWebhooks,
-        GatewayIntentBits.Guilds,
-        GatewayIntentBits.MessageContent
-    ]
-})
+const allIntents = new Intents(7796)
+global.client = await new Client({ intents: allIntents })
 
 //CommandHandler
 client.commands = new Collection();
