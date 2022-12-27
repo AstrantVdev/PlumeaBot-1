@@ -11,11 +11,8 @@ module.exports = {
         userId = message.author.id
 
         if (!message.author.bot){
-			    console.log(data)
-		console.log(dataConfig)
             const json = dataConfig.get("messageReplies")
 	    
-	    console.log(json)
             const triggers = new Map(Object.entries(json))
             const content = message.content
             const roles = message.member.roles.cache.map(r => `${r}`).length
