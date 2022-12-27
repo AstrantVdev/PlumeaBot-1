@@ -5,7 +5,7 @@ global.DATA = "DATA.json"
 global.DATA_CONFIG = "DATA_CONFIG.json"
 
 const allIntents = new Intents(7796)
-global.client = await new Client({ intents: allIntents })
+global.client = new Client({ intents: allIntents })
 
 //CommandHandler
 client.commands = new Collection();
