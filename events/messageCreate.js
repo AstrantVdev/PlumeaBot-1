@@ -11,6 +11,7 @@ module.exports = {
         userId = message.author.id
 
         if (!message.author.bot){
+		console.log(dataConfig)
             const json = dataConfig.get("messageReplies")
 	    
 	    console.log(json)
