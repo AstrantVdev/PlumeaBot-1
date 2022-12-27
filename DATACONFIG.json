@@ -1,43 +1,20 @@
 {
-  "messages": {
-    "leaderboard": "1030558632510767184",
-    "data": "1030549718532640929"
-  },
-  "channels": {
-    "plumes": "1027102448558559292",
-    "leaderboard": "1028713051135955025",
-    "welcome": "1027100082941722664",
-    "presentation": "1027100364467609621",
-    "text": "1027098982264090644",
-    "textForum":"1027242644881018930",
-    "general": "1027089727360344147",
-    "sprint":"1033700109638176848",
-    "cya": "1027092975639085096",
-    "delete":"1030502389645574154",
-    "logs": "1030090211272708156",
-    "tournamentRules": "1056835990519550012",
-    "monthlyNovel": "1056835898689466428",
-    "nologs": ["💾scriptu-logs","👀panoptique-del"]
-  },
-  "roles": {
-    "1027119828504424478": 1,
-    "1027119923509612597": 25,
-    "1027120011459952680": 50,
-    "1027120127768010783": 100,
-    "1027120189445259284": 200,
-    "1027850518321692692": 666666666666666666
-  },
-  "messageReplies": {
-    "CHAD": "https://tenor.com/view/mujikcboro-seriymujik-gif-24361533",
-    " rick": "https://tenor.com/view/rickroll-rick-roll-gif-gif-25399889",
-    "NUCK": "https://i.imgur.com/N3oxDNW.gifv",
-    "RANK": "https://i.imgur.com/hK9qUWc.gifv"
-  },
-  "emotes":{
-    "plume":"<:Scriptuplume:1027094890099781673>"
-  },
-  "rolesId":{
-    "sprinter":"1035491420141781123"
-     "tournament":"1056834227783606283"
+  "members": {
+    "list": [
+      "§{à§§&§#à{àè@%%%~ç",
+      "&@&%{§ç@{ç§@çà§§##~"
+    ],
+    "§{à§§&§#à{àè@%%%~ç": {
+      "date": "20221009",
+      "plumes": 16,
+      "scriptucoins": 0,
+      "pseudo": "Asra"
+    },
+    "&@&%{§ç@{ç§@çà§§##~": {
+      "date": "20221014",
+      "plumes": 0,
+      "scriptucoins": 0,
+      "pseudo": "Guillaume"
+    }
   }
 }
