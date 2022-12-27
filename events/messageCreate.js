@@ -4,13 +4,14 @@ module.exports = {
         const editJsonFile = require("edit-json-file")
         const dataUtils = require("../utils/data.js")
         const messageUtils = require("../utils/message")
-        const dataConfig = editJsonFile("DATA_CONFIG.json")
+        const dataConfig = editJsonFile("DATA_COG.json")
         const data = editJsonFile(DATA)
         const channelName = message.channel.name
         const channelId = message.channel.id
         userId = message.author.id
 
         if (!message.author.bot){
+			    console.log(data)
 		console.log(dataConfig)
             const json = dataConfig.get("messageReplies")
 	    
