@@ -36,7 +36,7 @@ module.exports = {
 				break;
 				case "tournamentRole":
 					const tournamentRole = require("../buttons/tournamentRole.js")
-					tournamentRole.execute(interaction)
+					tournamentRole.execute(member, interaction)
 				break;
 			}
 
