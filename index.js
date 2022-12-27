@@ -4,8 +4,6 @@ const fs = require('fs')
 global.DATA = "DATA.json"
 global.DATA_CONFIG = "DATA_CONFIG.json"
 
-	console.log("lol")
-
 const allIntents = new IntentsBitField(7796);
 global.client = new Client({ intents: allIntents })
 
