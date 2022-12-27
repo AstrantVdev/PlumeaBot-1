@@ -1,4 +1,4 @@
-const { Client, GatewayIntentBits, Collection, InteractionCollector } = require('discord.js')
+const { Client, GatewayIntentBits, Collection, InteractionCollector, Intents } = require('discord.js')
 const path = require('path')
 const fs = require('fs')
 global.DATA = "DATA.json"
