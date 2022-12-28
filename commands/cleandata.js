@@ -1,6 +1,4 @@
 const { SlashCommandBuilder, PermissionFlagsBits } = require("discord.js");
-const editJsonFile = require("edit-json-file")
-const data = editJsonFile(DATA)
 
 module.exports = {
 	data: new SlashCommandBuilder()
@@ -9,6 +7,8 @@ module.exports = {
     .setDefaultMemberPermissions(PermissionFlagsBits.Administrator), 
 
 	async execute(interaction) {
+        const editJsonFile = require("edit-json-file")
+        const data = editJsonFile(DATA)
         const members = data.get("members.list")
         const correctMembers = []
 
