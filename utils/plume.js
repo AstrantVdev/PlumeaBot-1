@@ -12,10 +12,7 @@ module.exports = {
         await roles.forEach(async (points, roleid)=>{
             const role = interaction.guild.roles.cache.get(roleid)
             if(member.roles.cache.find(r => r.id === roleid)){roleBefore = role}
-            
-            console.log(role)
-            console.log(roleid)
-            
+
             await member.roles.remove(role)
 
             if (points <= plumes) {
