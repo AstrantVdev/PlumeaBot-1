@@ -12,17 +12,19 @@ module.exports = {
         const members = data.get("members.list")
         const correctMembers = []
 
-        await members.forEach(m => {
+        await members.forEach(async m => {
             
             try {
-                const date = data.get("members."+m+".date")
-                correctMembers.add(m)
+                const date = await data.get("members."+m+".date")
+                await correctMembers.add(m)
+                console.log(m)
                 
             } catch (error) {
                 
             }
             
         })
+        console.log("DONE")
 
         await data.set("members.list", correctMembers)
         await data.save()
