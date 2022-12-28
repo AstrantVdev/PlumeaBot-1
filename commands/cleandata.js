@@ -16,7 +16,7 @@ module.exports = {
             
             try {
                 const date = await data.get("members."+m+".date")
-                await correctMembers.add(m)
+                await correctMembers.push(m)
                 console.log(m)
                 
             } catch (error) {
