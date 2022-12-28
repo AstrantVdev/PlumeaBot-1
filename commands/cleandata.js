@@ -15,7 +15,7 @@ module.exports = {
         await members.forEach(m => {
             
             try {
-                const date = 1
+                let date = 1
                 date += data.get("members."+m+".plumes")
                 correctMembers.push(m)
                 console.log(m)
