@@ -20,6 +20,7 @@ module.exports = {
                 console.log(m)
                 
             } catch (error) {
+                console.log(error)
                 
             }
             
