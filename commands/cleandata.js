@@ -17,9 +17,10 @@ module.exports = {
             try {
                 let date = 1
                 date += data.get("members."+m+".plumes")
-		console.log(date)
-                correctMembers.push(m)
-                console.log(m)
+                if(date != null){
+                    correctMembers.push(m)
+                    console.log(m)
+                }
                 
             } catch (error) {
                 console.log(error)
