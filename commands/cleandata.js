@@ -17,7 +17,7 @@ module.exports = {
             try {
                 let date = 1
                 date += data.get("members."+m+".plumes")
-                if(date != NaN){
+                if(date >=0){
                     correctMembers.push(m)
                     console.log(m)
                 }
@@ -30,6 +30,7 @@ module.exports = {
         })
         console.log("DONE")
 
+        console.log(correctMembers)
         await data.set("members.list", correctMembers)
         await data.save()
 
