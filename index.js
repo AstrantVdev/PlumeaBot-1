@@ -1,4 +1,4 @@
-const { Client, GatewayIntentBits, Collection, InteractionCollector } = require('discord.js')
+const { Client, GatewayIntentBits, Collection } = require('discord.js')
 const path = require('path')
 const fs = require('fs')
 global.DATA = "DATA.json"
@@ -9,15 +9,14 @@ global.client = new Client({
         GatewayIntentBits.DirectMessageReactions,
         GatewayIntentBits.DirectMessageTyping,
         GatewayIntentBits.DirectMessages,
-        GatewayIntentBits.GuildBans,
-		GatewayIntentBits.GuildEmojisAndStickers,
-		GatewayIntentBits.GuildIntegrations,
+        GatewayIntentBits.GuildEmojisAndStickers,
+        GatewayIntentBits.GuildIntegrations,
         GatewayIntentBits.GuildInvites,
         GatewayIntentBits.GuildMembers,
         GatewayIntentBits.GuildMessageReactions,
         GatewayIntentBits.GuildMessageTyping,
         GatewayIntentBits.GuildMessages,
-		GatewayIntentBits.GuildPresences,
+        GatewayIntentBits.GuildPresences,
         GatewayIntentBits.GuildScheduledEvents,
         GatewayIntentBits.GuildVoiceStates,
         GatewayIntentBits.GuildWebhooks,
