@@ -12,11 +12,12 @@ module.exports = {
         const members = data.get("members.list")
         const correctMembers = []
 
-        await members.forEach(async m => {
+        await members.forEach(m => {
             
             try {
-                const date = await data.get("members."+m+".date")
-                await correctMembers.push(m)
+                const date = 1
+                date += data.get("members."+m+".plumes")
+                correctMembers.push(m)
                 console.log(m)
                 
             } catch (error) {
