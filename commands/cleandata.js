@@ -5,6 +5,7 @@ const data = editJsonFile(DATA)
 module.exports = {
 	data: new SlashCommandBuilder()
 	.setName("cleandata")
+    .setDescription("w")
     .setDefaultMemberPermissions(PermissionFlagsBits.Administrator), 
 
 	async execute(interaction) {
