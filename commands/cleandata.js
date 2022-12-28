@@ -17,7 +17,7 @@ module.exports = {
             try {
                 let date = 1
                 date += data.get("members."+m+".plumes")
-                if(date != null){
+                if(date != NaN){
                     correctMembers.push(m)
                     console.log(m)
                 }
