@@ -65,12 +65,12 @@ module.exports = {
         const channels = client.channels.cache.values()
 
         for (const channel of channels) {
-            
+
             client.channels.fetch(channel.id)
             .then(async c => {
 
                 await setTimeout(async function() {
-                    let name = c.getName()
+                    let name = c.name
                     names.push(name)
                     name += "⭐"
                     await c.setName(name)
