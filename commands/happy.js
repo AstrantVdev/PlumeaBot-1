@@ -8,6 +8,8 @@ module.exports = {
 	async execute(interaction) {
         const general = interaction.channel.id
 
+        interaction.reploy("hey !")
+
         const messages = ["https://tenor.com/view/perfect-10-score-gif-7911501",
         "https://tenor.com/view/wow-omg-surprised-scared-kid-gif-15526979",
         "https://tenor.com/view/six-chaka-latest-cricket-sports-gif-3502016323564987583",
@@ -16,12 +18,11 @@ module.exports = {
         "https://tenor.com/view/happy-new-year-fireworks-animated-text-2018-gif-10651097"]
 
         const date = new Date()
-        date.setHours(("0" + 23).slice(-2))
-        date.setMinutes(("0" + 45).slice(-2))
+        date.setHours(("0" + 18).slice(-2))
+        date.setMinutes(("0" + 46).slice(-2))
         date.setSeconds(("0" + 50).slice(-2))
 
-
-        let WAIT = setInterval(function() {      
+        let WAIT = await setInterval(function() {      
             const date = new Date()
 
             if(date == start){ clearInterval(WAIT) }
@@ -29,11 +30,11 @@ module.exports = {
 
         }, 500)
 
-        client.channels.fetch(general)
+        await client.channels.fetch(general)
         .then(channel => {
-            channel.send(messages[5])
+            channel.send(messages[0])
 
-            count = 4
+            count = 1
             let COUNT = setInterval(function() {      
                 channel.send(messages[count])
 
