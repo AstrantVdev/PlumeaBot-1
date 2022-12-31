@@ -16,6 +16,7 @@ module.exports = {
         "https://tenor.com/view/six-chaka-latest-cricket-sports-gif-3502016323564987583",
         "https://tenor.com/view/four-four-fingers-up-stern-the-number4-alex-gif-15882276",
         "https://tenor.com/view/cubs-two-gif-18187716",
+        "https://tenor.com/view/happy-new-year-fireworks-animated-text-2018-gif-10651097",
         "https://tenor.com/view/happy-new-year-fireworks-animated-text-2018-gif-10651097"]
 
         const start = new Date()
