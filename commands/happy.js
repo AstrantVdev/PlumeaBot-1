@@ -19,28 +19,21 @@ module.exports = {
 
         const start = new Date()
         start.setHours(("0" + 18).slice(-2))
-        start.setMinutes(("0" + 47).slice(-2))
+        start.setMinutes(("0" + 50).slice(-2))
         start.setSeconds(("0" + 50).slice(-2))
 
-        let wait = true
         let WAIT = setInterval(function() {      
             const date = new Date()
 
             if(date >= start){ 
+                const o = require("../commands/happy.js")
+                o.go(general, messages)
+
                 clearInterval(WAIT)
-                wait = false
              }
             console.log("o")
 
         }, 500)
-
-        while(true){
-            if(!wait){
-                this.go(general, messages)
-                break
-            }
-        }
-
 
 	},
 
