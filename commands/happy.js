@@ -19,7 +19,7 @@ module.exports = {
 
         const start = new Date()
         start.setHours(("0" + 18).slice(-2))
-        start.setMinutes(("0" + 29).slice(-2))
+        start.setMinutes(("0" + 32).slice(-2))
         start.setSeconds(("0" + 50).slice(-2))
 
         let WAIT = setInterval(function() {      
