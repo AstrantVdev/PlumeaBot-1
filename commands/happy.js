@@ -43,8 +43,13 @@ module.exports = {
             channel.send(messages[0])
 
             count = 1
-            let COUNT = setInterval(async function() {      
-                await channel.send(messages[count])
+            let COUNT = setInterval(function() {    
+                
+                try{
+                    channel.send(messages[count])
+                }catch(Error){
+
+                }
 
                 if(count == 6){ 
                     const o = require("../commands/happy.js")
@@ -52,7 +57,7 @@ module.exports = {
 
                     clearInterval(COUNT) 
                 }
-                await count++
+                count++
 
             }, 2000)
 
