@@ -64,8 +64,8 @@ module.exports = {
         let count = 0
         const channels = client.channels.cache.values()
 
-        channels.forEach(channel => {
-
+        for (const channel of channels) {
+            
             client.channels.fetch(channel.id)
             .then(async c => {
 
@@ -83,8 +83,9 @@ module.exports = {
                 }, 200)
 
             }).catch(console.error)
-            
-        })
+
+        }
+
 
     },
 
