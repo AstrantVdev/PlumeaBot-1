@@ -8,7 +8,7 @@ module.exports = {
 	async execute(interaction) {
         const general = interaction.channel.id
 
-        interaction.reploy("hey !")
+        interaction.reply("hey !")
 
         const messages = ["https://tenor.com/view/perfect-10-score-gif-7911501",
         "https://tenor.com/view/wow-omg-surprised-scared-kid-gif-15526979",
