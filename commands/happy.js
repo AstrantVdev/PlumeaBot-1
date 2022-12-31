@@ -28,7 +28,7 @@ module.exports = {
             if(date == start){ clearInterval(WAIT) }
             console.log("o")
 
-        }, 500).then()
+        }, 500)
 
         await client.channels.fetch(general)
         .then(channel => {
