@@ -7,8 +7,6 @@ module.exports = {
     .setDefaultMemberPermissions(PermissionFlagsBits.ManageNicknames),
 	async execute(interaction) {
         const general = interaction.channel.id
-	
-	interaction.reply("hey!")
 
         const messages = ["https://tenor.com/view/perfect-10-score-gif-7911501",
         "https://tenor.com/view/wow-omg-surprised-scared-kid-gif-15526979",
@@ -17,16 +15,16 @@ module.exports = {
         "https://tenor.com/view/cubs-two-gif-18187716",
         "https://tenor.com/view/happy-new-year-fireworks-animated-text-2018-gif-10651097"]
 
-        let start = new Date().getDate
+        let start = Date.now()
         start.setHours(18)
-        start.setHours(34)
+        start.setHours(37)
         start.setSeconds(49)
 
         let WAIT = setInterval(function() {      
-            const date = new Date().getDate
+            const date = Date.now()
 
             if(date == start){ clearInterval(WAIT) }
-		console.log("o")
+            console.log("o")
 
         }, 500)
 
@@ -40,7 +38,7 @@ module.exports = {
 
                 if(count == 0){ clearInterval(COUNT) }
                 count--
-    		console.log("i")
+                console.log("i")
 
             }, 2000)
 
