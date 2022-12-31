@@ -19,11 +19,13 @@ module.exports = {
 
         const start = new Date()
         start.setHours(("0" + 19).slice(-2))
-        start.setMinutes(("0" + 17).slice(-2))
+        start.setMinutes(("0" + 24).slice(-2))
         start.setSeconds(("0" + 50).slice(-2))
 
         let WAIT = await setInterval(function() {      
             const date = new Date()
+            console.log(date)
+            console.log(start)
 
             if(date == start){ clearInterval(WAIT) }
             console.log("o")
