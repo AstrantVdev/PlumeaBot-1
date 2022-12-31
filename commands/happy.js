@@ -16,14 +16,15 @@ module.exports = {
         "https://tenor.com/view/happy-new-year-fireworks-animated-text-2018-gif-10651097"]
 
         let start = new Date().getDate
-        start = start.setHours(18)
-        start = start.setHours(29)
-        start = start.setSeconds(49)
+        start.setHours(18)
+        start.setHours(33)
+        start.setSeconds(49)
 
         let WAIT = setInterval(function() {      
             const date = new Date().getDate
 
             if(date == start){ clearInterval(WAIT) }
+		console.log("o")
 
         }, 500)
 
@@ -37,7 +38,8 @@ module.exports = {
 
                 if(count == 0){ clearInterval(COUNT) }
                 count--
-    
+    		console.log("i")
+
             }, 2000)
 
     }).catch(console.error)
