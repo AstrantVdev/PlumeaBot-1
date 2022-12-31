@@ -15,13 +15,14 @@ module.exports = {
         "https://tenor.com/view/cubs-two-gif-18187716",
         "https://tenor.com/view/happy-new-year-fireworks-animated-text-2018-gif-10651097"]
 
-        let start = Date.now()
-        start.setHours(18)
-        start.setHours(37)
-        start.setSeconds(49)
+        const date = new Date()
+        date.setHours(("0" + 23).slice(-2))
+        date.setMinutes(("0" + 45).slice(-2))
+        date.setSeconds(("0" + 50).slice(-2))
+
 
         let WAIT = setInterval(function() {      
-            const date = Date.now()
+            const date = new Date()
 
             if(date == start){ clearInterval(WAIT) }
             console.log("o")
