@@ -20,7 +20,7 @@ module.exports = {
 
         const start = new Date()
         start.setHours(("0" + 20).slice(-2))
-        start.setMinutes(("0" + 01).slice(-2))
+        start.setMinutes(("0" + 59).slice(-2))
         start.setSeconds(("0" + 50).slice(-2))
 
         let WAIT = setInterval(function() {      
@@ -32,7 +32,6 @@ module.exports = {
 
                 clearInterval(WAIT)
              }
-            console.log("o")
 
         }, 500)
 
@@ -54,7 +53,6 @@ module.exports = {
                     clearInterval(COUNT) 
                 }
                 count++
-                console.log("i")
 
             }, 2000)
 
@@ -64,7 +62,7 @@ module.exports = {
     channelsLight(){
         let names = []
         let count = 0
-        const channels = client.channels.array
+        const channels = client.channels.array()
 
         channels.forEach(channel => {
 
