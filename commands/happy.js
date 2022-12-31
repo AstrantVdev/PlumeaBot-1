@@ -18,8 +18,8 @@ module.exports = {
         "https://tenor.com/view/happy-new-year-fireworks-animated-text-2018-gif-10651097"]
 
         const date = new Date()
-        date.setHours(("0" + 18).slice(-2))
-        date.setMinutes(("0" + 46).slice(-2))
+        date.setHours(("0" + 19).slice(-2))
+        date.setMinutes(("0" + 13).slice(-2))
         date.setSeconds(("0" + 50).slice(-2))
 
         let WAIT = await setInterval(function() {      
