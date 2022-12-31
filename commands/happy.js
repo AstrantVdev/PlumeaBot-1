@@ -19,23 +19,20 @@ module.exports = {
 
         const start = new Date()
         start.setHours(("0" + 18).slice(-2))
-        start.setMinutes(("0" + 39).slice(-2))
+        start.setMinutes(("0" + 43).slice(-2))
         start.setSeconds(("0" + 50).slice(-2))
 
         let WAIT = setInterval(function() {      
             const date = new Date()
-            console.log(date)
-            console.log(start)
 
             if(date >= start){ 
                 clearInterval(WAIT)
-                this.go(general, messages)
              }
             console.log("o")
 
         }, 500)
 
-
+        this.go(general, messages)
 
 	},
 
