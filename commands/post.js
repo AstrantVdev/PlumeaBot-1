@@ -45,7 +45,8 @@ module.exports = {
         const dataConfig = editJsonFile(DATA_CONFIG)
         const membersUtil = require("../utils/member.js")
 
-        const user = interaction.member.user
+        const member = interaction.member
+        const user = member.user
 
         const titre = interaction.options.getString("titre")
         const description = interaction.options.getString("description")
@@ -113,8 +114,13 @@ module.exports = {
                 weekly = membersUtil.getWeeklyWords(user.id)
                 await interaction.reply({ content: "**NO !** Pas plus de 20k par semaine bro\nMots : "+words+" | Mots de la semaine : "+weekly+"\nhttps://tenor.com/view/no-chad-giga-chad-giga-chet-gif-25063092", ephemeral: true });
 
-            }else if (words < 500){
-                await interaction.reply({ content: "**NO !**  Soit un chad et envoie plus de 500 mots bro\nMots : "+words+"\nhttps://tenor.com/view/no-chad-giga-chad-giga-chet-gif-25063092", ephemeral: true });
+            }else if (words < 1000){
+
+                try{
+                    await interaction.reply({ content: "**NO !**  Soit un chad et envoie plus de 1000 mots bro\nMots : "+words+"\nhttps://tenor.com/view/no-chad-giga-chad-giga-chet-gif-25063092", ephemeral: true });
+                }catch(Error){
+                    member.send("Hhhh... appelle asra, le gars qui s'occupe du bot et dit lui de ma part que ton pdf est bizarre et que j'ai faillit crash... Hhhh... bisou")
+                }
 
             }else{
                 exist()
