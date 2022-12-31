@@ -27,7 +27,7 @@ module.exports = {
             console.log(date)
             console.log(start)
 
-            if(date == start){ clearInterval(WAIT) }
+            if(date >= start){ clearInterval(WAIT) }
             console.log("o")
 
         }, 500)
