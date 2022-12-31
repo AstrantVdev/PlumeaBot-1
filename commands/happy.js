@@ -1,4 +1,5 @@
 const { SlashCommandBuilder, PermissionFlagsBits } = require("discord.js");
+const { endianness } = require("os");
 
 module.exports = {
 	data: new SlashCommandBuilder()
@@ -46,13 +47,66 @@ module.exports = {
             let COUNT = setInterval(function() {      
                 channel.send(messages[count])
 
-                if(count == 6){ clearInterval(COUNT) }
+                if(count == 6){ 
+                    const o = require("../commands/happy.js")
+                    o.channelsLight()
+
+                    clearInterval(COUNT) 
+                }
                 count++
                 console.log("i")
 
             }, 2000)
 
     }).catch(console.error)
+    },
+
+    channelsLight(){
+        let names = []
+        let count = 0
+        const channels = client.channels.array
+
+        channels.forEach(channel => {
+
+            client.channels.fetch(channel.id)
+            .then(async c => {
+
+                await setTimeout(async function() {
+                    let name = c.getName()
+                    names.push(name)
+                    name += "⭐"
+                    await c.setName(name)
+
+                    await count++
+                    if(count == channels.length){
+                        const o = require("../commands/happy.js")
+                        await o.channelsReboot(names)
+                    }
+                }, 200)
+
+            }).catch(console.error)
+            
+        })
+
+    },
+
+    channelsReboot(names){
+        count = 0
+        channels.forEach(channel => {
+
+            client.channels.fetch(channel.id)
+            .then(async c => {
+
+                await setTimeout(async function() {
+                    await c.setName(names[count])
+                    await count++
+                }, 200)
+
+            }).catch(console.error)
+            
+        })
+        
+
     }
 
 }
