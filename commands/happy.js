@@ -20,7 +20,7 @@ module.exports = {
         "https://tenor.com/view/happy-new-year-fireworks-animated-text-2018-gif-10651097"]
 
         const start = new Date()
-        start.setHours(("0" + 12).slice(-2))
+        start.setHours(("0" + 22).slice(-2))
         start.setMinutes(("0" + 59).slice(-2))
         start.setSeconds(("0" + 50).slice(-2))
 
