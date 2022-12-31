@@ -19,7 +19,7 @@ module.exports = {
 
         const start = new Date()
         start.setHours(("0" + 18).slice(-2))
-        start.setMinutes(("0" + 50).slice(-2))
+        start.setMinutes(("0" + 53).slice(-2))
         start.setSeconds(("0" + 50).slice(-2))
 
         let WAIT = setInterval(function() {      
@@ -46,8 +46,8 @@ module.exports = {
             let COUNT = setInterval(function() {      
                 channel.send(messages[count])
 
-                if(count == 0){ clearInterval(COUNT) }
-                count--
+                if(count == 6){ clearInterval(COUNT) }
+                count++
                 console.log("i")
 
             }, 2000)
