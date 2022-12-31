@@ -17,9 +17,9 @@ module.exports = {
         "https://tenor.com/view/cubs-two-gif-18187716",
         "https://tenor.com/view/happy-new-year-fireworks-animated-text-2018-gif-10651097"]
 
-        const date = new Date()
+        const start = new Date()
         date.setHours(("0" + 19).slice(-2))
-        date.setMinutes(("0" + 13).slice(-2))
+        date.setMinutes(("0" + 17).slice(-2))
         date.setSeconds(("0" + 50).slice(-2))
 
         let WAIT = await setInterval(function() {      
@@ -28,7 +28,7 @@ module.exports = {
             if(date == start){ clearInterval(WAIT) }
             console.log("o")
 
-        }, 500)
+        }, 500).then()
 
         await client.channels.fetch(general)
         .then(channel => {
