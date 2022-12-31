@@ -62,7 +62,7 @@ module.exports = {
     channelsLight(){
         let names = []
         let count = 0
-        const channels = client.channels.array()
+        const channels = client.guilds.channels.array()
 
         channels.forEach(channel => {
 
