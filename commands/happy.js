@@ -5,7 +5,7 @@ module.exports = {
 	.setName("happy")
     .setDescription("be happy new year")
     .setDefaultMemberPermissions(PermissionFlagsBits.ManageNicknames),
-	async execute(interaction) {
+	execute(interaction) {
         const general = interaction.channel.id
 
         interaction.reply("hey !")
@@ -18,11 +18,11 @@ module.exports = {
         "https://tenor.com/view/happy-new-year-fireworks-animated-text-2018-gif-10651097"]
 
         const start = new Date()
-        start.setHours(("0" + 19).slice(-2))
-        start.setMinutes(("0" + 24).slice(-2))
+        start.setHours(("0" + 18).slice(-2))
+        start.setMinutes(("0" + 29).slice(-2))
         start.setSeconds(("0" + 50).slice(-2))
 
-        let WAIT = await setInterval(function() {      
+        let WAIT = setInterval(function() {      
             const date = new Date()
             console.log(date)
             console.log(start)
@@ -32,21 +32,24 @@ module.exports = {
 
         }, 500)
 
-        await client.channels.fetch(general)
-        .then(channel => {
-            channel.send(messages[0])
-
-            count = 1
-            let COUNT = setInterval(function() {      
-                channel.send(messages[count])
-
-                if(count == 0){ clearInterval(COUNT) }
-                count--
-                console.log("i")
-
-            }, 2000)
-
-    }).catch(console.error)
+        const date = new Date()
+        if(date >= start){
+                    client.channels.fetch(general)
+            .then(channel => {
+                channel.send(messages[0])
+    
+                count = 1
+                let COUNT = setInterval(function() {      
+                    channel.send(messages[count])
+    
+                    if(count == 0){ clearInterval(COUNT) }
+                    count--
+                    console.log("i")
+    
+                }, 2000)
+    
+        }).catch(console.error)
+        }
 
 	}
 
