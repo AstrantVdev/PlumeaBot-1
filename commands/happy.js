@@ -7,6 +7,8 @@ module.exports = {
     .setDefaultMemberPermissions(PermissionFlagsBits.ManageNicknames),
 	async execute(interaction) {
         const general = interaction.channel.id
+	
+	interaction.reply("hey!")
 
         const messages = ["https://tenor.com/view/perfect-10-score-gif-7911501",
         "https://tenor.com/view/wow-omg-surprised-scared-kid-gif-15526979",
@@ -17,7 +19,7 @@ module.exports = {
 
         let start = new Date().getDate
         start.setHours(18)
-        start.setHours(33)
+        start.setHours(34)
         start.setSeconds(49)
 
         let WAIT = setInterval(function() {      
