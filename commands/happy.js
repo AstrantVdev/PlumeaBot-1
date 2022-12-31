@@ -66,7 +66,6 @@ module.exports = {
     },
 
     channelsLight(){
-        let names = []
         let count = 0
         const channels = client.channels.cache.values()
 
@@ -77,40 +76,19 @@ module.exports = {
 
                 await setTimeout(async function() {
                     let name = c.name
-                    names.push(name)
-                    name += "⭐"
+                    name = name.replace("⭐","")
                     await c.setName(name)
 
                     await count++
                     if(count == channels.length){
                         const o = require("../commands/happy.js")
-                        await o.channelsReboot(names)
                     }
-                }, 200)
+                }, 500)
 
             }).catch(console.error)
 
         }
 
-
-    },
-
-    channelsReboot(names){
-        count = 0
-        channels.forEach(channel => {
-
-            client.channels.fetch(channel.id)
-            .then(async c => {
-
-                await setTimeout(async function() {
-                    await c.setName(names[count])
-                    await count++
-                }, 200)
-
-            }).catch(console.error)
-            
-        })
-        
 
     }
 
