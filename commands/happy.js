@@ -53,9 +53,6 @@ module.exports = {
                 }
 
                 if(count == 6){ 
-                    const o = require("../commands/happy.js")
-                    o.channelsLight()
-
                     clearInterval(COUNT) 
                 }
                 count++
