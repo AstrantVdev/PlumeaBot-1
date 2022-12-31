@@ -17,7 +17,7 @@ module.exports = {
 
         let start = new Date().getDate
         start = start.setHours(18)
-        start = start.setHours(26)
+        start = start.setHours(29)
         start = start.setSeconds(49)
 
         let WAIT = setInterval(function() {      
