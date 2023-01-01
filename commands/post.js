@@ -76,7 +76,7 @@ module.exports = {
                     return
                 }else{
                     await text.remove(dt)
-                    await member.removeText(user.id, dt)
+                    await membersUtil.removeText(user.id, dt)
                 }
             }
         }
