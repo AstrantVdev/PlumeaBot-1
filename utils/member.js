@@ -26,7 +26,7 @@ module.exports = {
         userId = json.intToABC(userId)
         weekly = this.getWeeklyWords(userId)
 
-        if (weekly + words > 20000){
+        if (weekly + words > 999999){
             return true
         }else{
             return false
