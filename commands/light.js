@@ -17,7 +17,7 @@ module.exports = {
             let o =  0
 
             let COUNT =  setInterval(function() {    
-                client.channels.fetch(channel.id)
+                client.channels.fetch(channel)
                 .then(c => {
                     console.log(c.name)
                     let n = c.name
@@ -27,7 +27,7 @@ module.exports = {
                 })
 
                 if(o == 8){ 
-                    client.channels.fetch(channel.id)
+                    client.channels.fetch(channel)
                     .then(c => {
                         c.setName(name)
                         console.log('reset')
