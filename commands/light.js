@@ -13,7 +13,7 @@ module.exports = {
 	await inter.reply({content: 'uwu !', ephemeral: true})
 	    
         let i = await 0
-        while(i < 8){
+        let C = await setInterval(async function() {    
             let o = await 0
 
             let COUNT = await setInterval(function() {    
@@ -30,9 +30,13 @@ module.exports = {
                     clearInterval(COUNT) 
                 }
 
-            }, 2000)
+            }, 1000)
 
-        }
+            if(i == 8){ 
+                clearInterval(C) 
+            }
+
+        }, 10000)
 
     }
     
