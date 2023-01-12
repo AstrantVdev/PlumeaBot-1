@@ -6,7 +6,7 @@ module.exports = {
         .setDescription('be light')
         .setDefaultMemberPermissions(PermissionFlagsBits.ManageNicknames),
 
-    async execute(inter) {
+    execute(inter) {
         const c = inter.channel
         const name = c.name
 
@@ -16,18 +16,18 @@ module.exports = {
 
             for(o = 0 ; o < 8 ; o++){
 
-                setTimeout(async function() {
+                setTimeout(function() {
                     console.log(c.name)
                     let n = c.name
                     n += '⭐'
-                    await c.setName(n)
+                    c.setName(n)
         
                 }, 750)
 
             }
 
             console.log('reset')
-            await c.setName(name)
+            c.setName(name)
 
         }
 
