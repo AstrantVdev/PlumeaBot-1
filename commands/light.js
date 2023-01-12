@@ -21,8 +21,7 @@ module.exports = {
                 .then(c => {
                     console.log(c.name)
                     let n = c.name
-                    n += '⭐'
-                    c.setName(n)
+                    c.setName(n+'⭐')
                     o++
                 })
 
