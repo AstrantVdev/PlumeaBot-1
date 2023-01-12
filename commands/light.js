@@ -18,9 +18,9 @@ module.exports = {
 
                 setTimeout(async function() {
                     console.log(c.name)
-                    let name = c.name
-                    name = name + '⭐'
-                    await c.setName(name)
+                    let n = c.name
+                    n += '⭐'
+                    await c.setName(n)
         
                 }, 750)
 
