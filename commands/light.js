@@ -12,23 +12,26 @@ module.exports = {
 
 	inter.reply({content: 'uwu !', ephemeral: true})
 	    
-        for(i = 0 ; i < 8 ; await i++){
+        let i = 0
+        while(i < 8){
+            let o = 0
 
-            for(o = 0 ; o < 8 ; await o++){
+            while(o < 0){
 
                 await setTimeout(async function() {
                     console.log(c.name)
                     let n = c.name
                     n += '⭐'
                     await c.setName(n)
-        
+                    await o++
+
                 }, 750)
 
             }
 
             await console.log('reset')
             await c.setName(name)
-
+            await i++
         }
 
     }
