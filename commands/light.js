@@ -7,33 +7,34 @@ module.exports = {
         .setDefaultMemberPermissions(PermissionFlagsBits.ManageNicknames),
 
     async execute(inter) {
-        const c = await inter.channel
-        global.channel = await c.id
+        const name = inter.channel.name
+        const channel =  inter.channel.id
 
 	await inter.reply({content: 'uwu !', ephemeral: true})
-	    
-        let i = await 0
-        let C = await setInterval(async function() {    
-            let o = await 0
 
-            let COUNT = await setInterval(function() {    
-                console.log(c.name)
+        let i =  0
+        let C =  setInterval(function() {    
+            let o =  0
+
+            let COUNT =  setInterval(function() {    
                 client.channels.fetch(channel.id)
                 .then(c => {
+                    console.log(c.name)
                     let n = c.name
                     n += '⭐'
                     c.setName(n)
+                    o++
                 })
-                o++
 
                 if(o == 8){ 
-                    console.log('reset')
                     client.channels.fetch(channel.id)
                     .then(c => {
                         c.setName(name)
+                        console.log('reset')
+                        i++
+                        clearInterval(COUNT) 
                     })
-                    i++
-                    clearInterval(COUNT) 
+
                 }
 
             }, 1000)
