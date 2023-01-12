@@ -16,22 +16,22 @@ module.exports = {
         while(i < 8){
             let o = await 0
 
-            while(o < 8){
+            let COUNT = await setInterval(function() {    
+                console.log(c.name)
+                let n = c.name
+                n += '⭐'
+                c.setName(n)
+                o++
 
-                await setTimeout(async function() {
-                    await console.log(c.name)
-                    let n = await c.name
-                    n += await '⭐'
-                    await c.setName(n)
-                    await o++
+                if(o == 8){ 
+                    console.log('reset')
+                    c.setName(name)
+                    i++
+                    clearInterval(COUNT) 
+                }
 
-                }, 750)
+            }, 2000)
 
-            }
-
-            await console.log('reset')
-            await c.setName(name)
-            await i++
         }
 
     }
