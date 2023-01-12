@@ -18,14 +18,20 @@ module.exports = {
 
             let COUNT = await setInterval(function() {    
                 console.log(c.name)
-                let n = c.name
-                n += '⭐'
-                c.setName(n)
+                client.channels.fetch(channel.id)
+                .then(c => {
+                    let n = c.name
+                    n += '⭐'
+                    c.setName(n)
+                })
                 o++
 
                 if(o == 8){ 
                     console.log('reset')
-                    c.setName(name)
+                    client.channels.fetch(channel.id)
+                    .then(c => {
+                        c.setName(name)
+                    })
                     i++
                     clearInterval(COUNT) 
                 }
