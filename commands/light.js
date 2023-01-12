@@ -16,7 +16,7 @@ module.exports = {
         while(i < 8){
             let o = 0
 
-            while(o < 0){
+            while(o < 8){
 
                 await setTimeout(async function() {
                     console.log(c.name)
