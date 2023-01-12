@@ -8,7 +8,7 @@ module.exports = {
 
     async execute(inter) {
         const c = await inter.channel
-        const name = await c.name
+        global.channel = await c.id
 
 	await inter.reply({content: 'uwu !', ephemeral: true})
 	    
