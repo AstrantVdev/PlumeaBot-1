@@ -6,28 +6,28 @@ module.exports = {
         .setDescription('be light')
         .setDefaultMemberPermissions(PermissionFlagsBits.ManageNicknames),
 
-    execute(inter) {
+    async execute(inter) {
         const c = inter.channel
         const name = c.name
 
 	inter.reply({content: 'uwu !', ephemeral: true})
 	    
-        for(i = 0 ; i < 8 ; i++){
+        for(i = 0 ; i < 8 ; await i++){
 
-            for(o = 0 ; o < 8 ; o++){
+            for(o = 0 ; o < 8 ; await o++){
 
-                setTimeout(function() {
+                await setTimeout(async function() {
                     console.log(c.name)
                     let n = c.name
                     n += '⭐'
-                    c.setName(n)
+                    await c.setName(n)
         
                 }, 750)
 
             }
 
-            console.log('reset')
-            c.setName(name)
+            await console.log('reset')
+            await c.setName(name)
 
         }
 
