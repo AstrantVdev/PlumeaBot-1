@@ -7,21 +7,21 @@ module.exports = {
         .setDefaultMemberPermissions(PermissionFlagsBits.ManageNicknames),
 
     async execute(inter) {
-        const c = inter.channel
-        const name = c.name
+        const c = await inter.channel
+        const name = await c.name
 
-	inter.reply({content: 'uwu !', ephemeral: true})
+	await inter.reply({content: 'uwu !', ephemeral: true})
 	    
-        let i = 0
+        let i = await 0
         while(i < 8){
-            let o = 0
+            let o = await 0
 
             while(o < 8){
 
                 await setTimeout(async function() {
-                    console.log(c.name)
-                    let n = c.name
-                    n += '⭐'
+                    await console.log(c.name)
+                    let n = await c.name
+                    n += await '⭐'
                     await c.setName(n)
                     await o++
 
