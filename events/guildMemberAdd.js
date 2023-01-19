@@ -28,7 +28,7 @@ module.exports = {
         await client.channels.fetch(welcome)
         .then(channel => channel.send({ embeds: [welcomeMessage]}))
 		
-	await member.send("> 📕▸**Bienvenue sur Pluméa !** 🧭 ▸Le guide du Pluméen contient toutes les informations nécessaires sur le bon fonctionnement de la communauté : *règles générales, comment poster son avis, comment poster son texte...*\n"+
+	await member.send("> 📕▸**Bienvenue sur Pluméa !**\n\n 🧭 ▸Le guide du Pluméen contient toutes les informations nécessaires sur le bon fonctionnement de la communauté : *règles générales, comment poster son avis, comment poster son texte...*\n"+
 "https://discord.com/channels/1027089727360344144/1063760987238436924\n\n"+
 
 "👤 ▸Et si vous nous en disiez plus sur vous ? \n"+
