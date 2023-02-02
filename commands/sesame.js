@@ -1,4 +1,7 @@
-const { SlashCommandBuilder } = require('discord.js');
+const { SlashCommandBuilder } = require('discord.js')
+
+const editJsonFile = require("edit-json-file")
+const dataConfig = editJsonFile(DATA_CONFIG)
 
 module.exports = {
 	data: new SlashCommandBuilder()
@@ -11,17 +14,22 @@ module.exports = {
 
 	async execute(interaction) {
         const n = interaction.options.getString('pass')
-        interaction.reply({ content: 'Bienvenue uwu', ephemeral: true })
 		
-		        sprinterRole = dataConfig.get("rolesId.sprinter")
+		        plumeRole = dataConfig.get("rolesId.plumeRole")
 
-        if(member.roles.cache.has(sprinterRole)){
-            await member.roles.remove(sprinterRole)
-            await interaction.reply({content:"Tu n'es plus un sprinter à présent ! :3\nTu seras donc plus jamais mentionné ! Tous du moins pour les sprints...",ephemeral:true})
+        if(member.roles.cache.has(plumeRole)){
+        interaction.reply({ content: 'Tu fais quoi là -_-', ephemeral: true })
 
         }else{
-            await member.roles.add(sprinterRole)
-            await interaction.reply({content:"Tu es sprinter à présent ! :3\nTu seras donc mentionné à chaque sprint...",ephemeral:true})
+		
+		if(pass === "050123"){
+			await member.roles.add(plumeRole)
+        		await interaction.reply({ content: 'Bienvenue uwu', ephemeral: true })
+		}else{
+		await interaction.reply({ content: 'Mauvais mot de passe..', ephemeral: true })
+
+		}
+
 
         }
     
