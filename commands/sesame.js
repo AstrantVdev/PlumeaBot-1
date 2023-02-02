@@ -13,7 +13,7 @@ module.exports = {
         .setRequired(true)),
 
 	async execute(interaction) {
-        const n = interaction.options.getString('pass')
+        const pass = interaction.options.getString('pass')
 		const member = interaction.member
 		        plumeRole = dataConfig.get("rolesId.plumeRole")
 
