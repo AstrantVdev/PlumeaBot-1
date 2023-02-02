@@ -9,7 +9,7 @@ module.exports = {
     .setDescription("Permet d'accéder au serveur uwu")
     .addStringOption(option => option
         .setName('pass')
-		.setDescription("Mot de passe dans la description du salon")
+		.setDescription("Mot de passe dans la description du salon en haut")
         .setRequired(true)),
 
 	async execute(interaction) {
@@ -26,7 +26,7 @@ module.exports = {
 			await member.roles.add(plumeRole)
         		await interaction.reply({ content: 'Bienvenue uwu', ephemeral: true })
 		}else{
-		await interaction.reply({ content: 'Mauvais mot de passe..', ephemeral: true })
+		await interaction.reply({ content: 'Mauvais mot de passe.. Mot de passe dans la description du salon en haut', ephemeral: true })
 
 		}
 
