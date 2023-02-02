@@ -14,7 +14,7 @@ module.exports = {
 
 	async execute(interaction) {
         const n = interaction.options.getString('pass')
-		
+		const member = interaction.member
 		        plumeRole = dataConfig.get("rolesId.plumeRole")
 
         if(member.roles.cache.has(plumeRole)){
