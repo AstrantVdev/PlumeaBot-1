@@ -40,6 +40,11 @@ module.exports = {
                 await message.delete()
                 await message.author.send("__**Impossible d'envoyer ce message :**__```md\n#Tu dois faire /post pour poster ton texte :D```")
             }
+		
+	    if(channelId == dataConfig.get("1070792810334261309")){
+                await message.delete()
+                await message.author.send("__**Impossible d'envoyer ce message :**__```md\n#Tu dois faire /sesame pour accéder au serveur```")
+            }
 
             if(channelId == dataConfig.get("channels.general")){
                 const today = new Date()
