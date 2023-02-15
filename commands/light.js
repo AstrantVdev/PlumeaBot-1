@@ -10,7 +10,7 @@ module.exports = {
         const name = inter.channel.name
         const channel =  inter.channel.id
 
-	await inter.reply({content: 'uwu !', ephemeral: true})
+	await inter.reply({content: 'Paranakin Dark Deeds 3', ephemeral: true})
 
         let i =  0
         let C =  setInterval(function() {    
