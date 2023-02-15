@@ -11,8 +11,8 @@ module.exports = {
         const user = member.user
 
         welcomeMessage = message.newEmbed()
-        .setDescription(`**Bienvenue sur Scriptura ${member.user}.**`)
-        .setAuthor({ name: 'Youpiii !',iconURL: 'https://i.imgur.com/TYeapMy.png', url: 'https://tenor.com/view/rickroll-roll-rick-never-gonna-give-you-up-never-gonna-gif-22954713' })
+        .setDescription(`**Bienvenue sur Pluméa ${member.user}.**`)
+        .setAuthor({ name: 'Youpiii !',iconURL: 'https://i.imgur.com/TYeapMy.png'})
         .setThumbnail(member.user.displayAvatarURL())
         
         const json = require("../utils/json.js")

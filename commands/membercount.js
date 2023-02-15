@@ -8,6 +8,6 @@ module.exports = {
     async execute(interaction) {
         let count = interaction.guild.memberCount
         count -= interaction.guild.members.cache.filter(m => m.user.bot).size
-        await interaction.reply("**Aujourd'hui Scriptura compte ||   " + count  + "   || âmes ! :D**")
+        await interaction.reply("**Aujourd'hui Pluméa compte ||   " + count  + "   || âmes ! :D**")
     }
 }

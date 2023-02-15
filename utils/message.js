@@ -6,7 +6,7 @@ module.exports = {
         const messageEmbed = new EmbedBuilder()
         .setColor(0x2C2F33)
         .setTimestamp()
-        .setFooter({ text: 'scriptubot', iconURL: 'https://i.imgur.com/TYeapMy.png' });
+        .setFooter({ text: 'PluméaBot', iconURL: 'https://i.imgur.com/TYeapMy.png' });
         return messageEmbed
     },
 
