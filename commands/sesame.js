@@ -6,10 +6,10 @@ const dataConfig = editJsonFile(DATA_CONFIG)
 module.exports = {
 	data: new SlashCommandBuilder()
 	.setName('sesame')
-    .setDescription("Permet d'accéder au serveur")
+    .setDescription("Permet d'accéder à Pluméa")
     .addStringOption(option => option
         .setName('pass')
-		.setDescription("Mot de passe dans la description du salon en haut")
+		.setDescription("Mot de passe?")
         .setRequired(true)),
 
 	async execute(interaction) {
@@ -24,7 +24,7 @@ module.exports = {
 		
 		if(pass === "050123"){
 			await member.roles.add(plumeRole)
-        		await interaction.reply({ content: 'Bienvenue', ephemeral: true })
+        		await interaction.reply({ content: 'Bienvenue Pluméen !', ephemeral: true })
 			
 			await interaction.member.send("> 📕▸**Bienvenue sur Pluméa !**\n\n 🧭 ▸Le guide du Pluméen contient toutes les informations nécessaires sur le bon fonctionnement de la communauté : *règles générales, comment poster son avis, comment poster son texte...*\n"+
 "https://discord.com/channels/1027089727360344144/1063760987238436924\n\n"+
@@ -53,7 +53,7 @@ module.exports = {
 
 "https://imgur.com/92562no")
 		}else{
-		await interaction.reply({ content: 'Mauvais mot de passe.. Mot de passe dans la description du salon en haut', ephemeral: true })
+		await interaction.reply({ content: 'Mauvais mot de passe...', ephemeral: true })
 
 		}
 
